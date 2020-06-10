@@ -254,6 +254,77 @@
 
 <div class="post-preview">
 
+    <a href="/article/常用名词/">
+        <h2 class="post-title">
+                                 
+            常用名词解释(不断更新)
+        </h2>
+        <h3 class="post-subtitle">
+            This is hexo theme Demo.
+        </h3>
+        <div class="post-content-preview">
+            收录了一些名词及英文缩写的解释
+QPS: query per second
+
+每秒请求次数:业务数据量指标
+
+DDL &amp; DML &amp; DCL &amp; TCL
+DDL（Data Definition Language）数据库定义语言statements are used to define the database structure or schema.
+
+DDL是SQL......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 果茶 on
+            2019-02-04
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#常用名词" title="常用名词">常用名词</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/article/记一次删除zookeeper的meta数据重启遇坑/">
+        <h2 class="post-title">
+                                 
+            记一次删除zookeeper的meta数据重启遇坑
+        </h2>
+        <h3 class="post-subtitle">
+            This is hexo theme Demo.
+        </h3>
+        <div class="post-content-preview">
+            当时CDH的zookeeper数据出现问题,需要删除重新生成,遇坑
+123456cd /etc/zookeeper/conf/cat zoo.cfg     dataDir=/var/lib/zookeeper    cd /var/lib/zookeeper  rm -rf *
+重启
+错误一:Unable to create data directory and start Zookeep......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 果茶 on
+            2019-02-04
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#CDH" title="CDH">CDH</a>
+            
+              <a href="/tags/#zookeeper" title="zookeeper">zookeeper</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
     <a href="/article/linux01/">
         <h2 class="post-title">
                                  
@@ -358,6 +429,40 @@ vi命令相关
 
 <div class="post-preview">
 
+    <a href="/article/flume启停脚本/">
+        <h2 class="post-title">
+                                 
+            flume启停脚本
+        </h2>
+        <h3 class="post-subtitle">
+            This is hexo theme Demo.
+        </h3>
+        <div class="post-content-preview">
+            flume启停脚本
+flume的启动停止个人感觉较繁琐,故写了针对单个业务的启停脚本
+(也可将配置从外面传入,本脚本将大多配置写在内部了)
+使用命令
+flume-xx.sh start/stop/restart
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 果茶 on
+            2019-06-05
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#flume" title="flume">flume</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
     <a href="/article/hadoop为用户赋权限/">
         <h2 class="post-title">
                                  
@@ -380,6 +485,39 @@ Linux下默认是没有supergroup组的
         <p class="post-meta" style="margin: 10px 0;">
             Posted by 果茶 on
             2019-03-03
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#hadoop" title="hadoop">hadoop</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/article/hadoop基准测试/">
+        <h2 class="post-title">
+                                 
+            hadoop基准测试
+        </h2>
+        <h3 class="post-subtitle">
+            This is hexo theme Demo.
+        </h3>
+        <div class="post-content-preview">
+            基准测试
+有哪些测试方式：
+1hadoop  jar /opt/cloudera/parcels/CDH-5.3.6-1.cdh5.3.6.p0.11/jars/hadoop-mapreduce-client-jobclient-2.5.0-cdh5.3.6-tests.jar
+测试hadoop写的速度
+向HDFS文件系统中写入数据,30个文件,每个文件100MB,文件存放到/benchma......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 果茶 on
+            2019-01-06
         </p>
         <div class="tags">
             
@@ -428,7 +566,11 @@ Linux下默认是没有supergroup组的
     <div class="tags">
         
             
-            <a href="/tags/#hadoop" title="hadoop" rel="1">hadoop</a>
+            <a href="/tags/#flume" title="flume" rel="1">flume</a>
+            
+        
+            
+            <a href="/tags/#hadoop" title="hadoop" rel="2">hadoop</a>
             
         
             
@@ -440,11 +582,23 @@ Linux下默认是没有supergroup组的
             
         
             
+            <a href="/tags/#hbase" title="hbase" rel="1">hbase</a>
+            
+        
+            
             <a href="/tags/#随笔" title="随笔" rel="1">随笔</a>
             
         
             
-            <a href="/tags/#hbase" title="hbase" rel="1">hbase</a>
+            <a href="/tags/#常用名词" title="常用名词" rel="1">常用名词</a>
+            
+        
+            
+            <a href="/tags/#CDH" title="CDH" rel="1">CDH</a>
+            
+        
+            
+            <a href="/tags/#zookeeper" title="zookeeper" rel="1">zookeeper</a>
             
         
     </div>
@@ -508,15 +662,15 @@ Linux下默认是没有supergroup组的
         </li>
       
         <li>
+          <a href="/article/flume启停脚本/">flume启停脚本</a>
+        </li>
+      
+        <li>
           <a href="/article/hadoop为用户赋权限/">linux用户添加hdfs权限</a>
         </li>
       
         <li>
-          <a href="/article/linux01/">Linux命令(不断补充)</a>
-        </li>
-      
-        <li>
-          <a href="/article/thanks/">感谢一路以来帮助过我的人们</a>
+          <a href="/article/常用名词/">常用名词解释(不断更新)</a>
         </li>
       
     </ul>
@@ -539,7 +693,7 @@ Linux下默认是没有supergroup组的
         
     <h5>ARCHIVES</h5>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">2</span></li></ul>
     </div>
 
         <hr>

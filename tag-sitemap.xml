@@ -31,7 +31,35 @@
 
     <url>
         <loc>http://www.ruozedata.com/tags/hadoop/</loc>
-        <lastmod>2020-06-10T16:52:20.578Z</lastmod>
+        <lastmod>2020-06-10T17:09:28.396Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.ruozedata.com/tags/flume/</loc>
+        <lastmod>2020-06-10T17:23:36.794Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.ruozedata.com/tags/%E5%B8%B8%E7%94%A8%E5%90%8D%E8%AF%8D/</loc>
+        <lastmod>2020-06-10T17:37:44.462Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.ruozedata.com/tags/CDH/</loc>
+        <lastmod>2020-06-10T17:47:59.506Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.ruozedata.com/tags/zookeeper/</loc>
+        <lastmod>2020-06-10T17:47:59.506Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

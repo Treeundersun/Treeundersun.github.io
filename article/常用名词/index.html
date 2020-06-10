@@ -14,11 +14,11 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <title>
         
-          linux用户添加hdfs权限 - 果茶 | Blog
+          常用名词解释(不断更新) - 果茶 | Blog
         
     </title>
 
-    <link rel="canonical" href="http://www.ruozedata.com/article/hadoop为用户赋权限/">
+    <link rel="canonical" href="http://www.ruozedata.com/article/常用名词/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -88,14 +88,14 @@
                     <div class="post-heading">
                         <div class="tags">
                             
-                              <a class="tag" href="/tags/#hadoop" title="hadoop">hadoop</a>
+                              <a class="tag" href="/tags/#常用名词" title="常用名词">常用名词</a>
                             
                         </div>
-                        <h1>linux用户添加hdfs权限</h1>
+                        <h1>常用名词解释(不断更新)</h1>
                         <h2 class="subheading">This is hexo theme Demo.</h2>
                         <span class="meta">
                             Posted by 果茶 on
-                            2019-03-03
+                            2019-02-04
                         </span>
                     </div>
                 
@@ -212,26 +212,73 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <h4 id="给root或其他-xxx-user-赋hdfs权限">给root或其他 xxx user 赋hdfs权限</h4>
-<p>通常会把 root 或者需要的用户添加到 supergroup组，但Linux下默认是没有supergroup组。</p>
-<h5 id="linux下默认是没有supergroup组的">Linux下默认是没有supergroup组的</h5>
-<p># hadoop:x:994:hdfs,mapred,yarn</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/group</span><br></pre></td></tr></table></figure>
-<h5 id="查看hdfs用户的组是hadoop">查看hdfs用户的组是hadoop</h5>
-<p># hdfs:x:995:992:Hadoop HDFS:/var/lib/hadoop-hdfs:/sbin/nologin</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/passwd</span><br></pre></td></tr></table></figure>
+                <h4 id="收录了一些名词及英文缩写的解释">收录了一些名词及英文缩写的解释</h4>
+<h5 id="qps-query-per-second">QPS: query per second</h5>
 <blockquote>
-<p>所以，先在Linux添加supergroup组，把root用户添加到supergroup里，再同步权限到HDFS。</p>
+<p>每秒请求次数:业务数据量指标</p>
 </blockquote>
-<h5 id="linux添加supergroup组">Linux添加supergroup组</h5>
-<p>#  supergroup:x:1003:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">groupadd supergroup</span><br></pre></td></tr></table></figure>
-<h5 id="将root添加到supergroup">将root添加到supergroup</h5>
-<p># supergroup:x:1003:root</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">usermod -a -G supergroup root</span><br></pre></td></tr></table></figure>
-<h5 id="同步系统权限信息到hdfs会自动同步其他节点权限">同步系统权限信息到HDFS,会自动同步其他节点权限</h5>
-<p># Refresh user to groups mapping successful for cdh-master/192.168.100.45:8020</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">su - hdfs -s /bin/bash -c <span class="string">"hdfs dfsadmin -refreshUserToGroupsMappings"</span></span><br></pre></td></tr></table></figure>
+<h5 id="ddl-amp-dml-amp-dcl-amp-tcl">DDL &amp; DML &amp; DCL &amp; TCL</h5>
+<h6 id="ddldata-definition-language数据库定义语言statements-are-used-to-define-the-database-structure-or-schema">DDL（Data Definition Language）数据库定义语言statements are used to define the database structure or schema.</h6>
+<blockquote>
+<p>DDL是SQL语言的四大功能之一。<br>
+	用于定义数据库的三级结构，包括外模式、概念模式、内模式及其相互之间的映像，定义数据的完整性、安	全控制等约束<br>
+	DDL不需要commit.<br>
+	CREATE<br>
+	ALTER<br>
+	DROP<br>
+	TRUNCATE<br>
+	COMMENT<br>
+	RENAME</p>
+</blockquote>
+<h6 id="dmldata-manipulation-language数据操纵语言statements-are-used-for-managing-data-within-schema-objects">DML（Data Manipulation Language）数据操纵语言statements are used for managing data within schema objects.</h6>
+<blockquote>
+<p>由DBMS提供，用于让用户或程序员使用，实现对数据库中数据的操作。<br>
+	DML分成交互型DML和嵌入型DML两类。<br>
+	依据语言的级别，DML又可分成过程性DML和非过程性DML两种。<br>
+	需要commit.<br>
+	SELECT<br>
+	INSERT<br>
+	UPDATE<br>
+	DELETE<br>
+	MERGE<br>
+	CALL<br>
+	EXPLAIN PLAN<br>
+	LOCK TABLE</p>
+</blockquote>
+<h6 id="dcldata-control-language数据库控制语言-授权角色控制等">DCL（Data Control Language）数据库控制语言  授权，角色控制等</h6>
+<blockquote>
+<p>GRANT 授权<br>
+	REVOKE 取消授权</p>
+</blockquote>
+<h6 id="tcltransaction-control-language事务控制语言">TCL（Transaction Control Language）事务控制语言</h6>
+<blockquote>
+<p>SAVEPOINT 设置保存点<br>
+	ROLLBACK  回滚<br>
+	SET TRANSACTION</p>
+</blockquote>
+<h5 id="rpcremote-procedure-call远程过程调用">RPC(Remote Procedure Call)：远程过程调用</h5>
+<blockquote>
+<pre><code>简单的理解是一个节点请求另一个节点提供的服务
+</code></pre>
+</blockquote>
+<h5 id="dwd-amp-dwb-amp-dws">DWD &amp; DWB &amp; DWS</h5>
+<h6 id="dwd">DWD：</h6>
+<blockquote>
+<p>data warehouse detail 细节数据层，有的也称为 ODS层，是业务层与数据仓库的隔离层。</p>
+</blockquote>
+<h6 id="dwb">DWB：</h6>
+<blockquote>
+<p>data warehouse base 基础数据层，存储的是客观数据，一般用作中间层，可以认为是大量指标的数据层。</p>
+</blockquote>
+<h6 id="dws">DWS：</h6>
+<blockquote>
+<p>data warehouse service 服务数据层，基于DWB上的基础数据，整合汇总成分析某一个主题域的服务数据，一般是宽表。</p>
+</blockquote>
+<h5 id="spof">SPOF</h5>
+<blockquote>
+<p>单点故障: 集群中单个节点挂掉,需要修复的情况</p>
+</blockquote>
+
                 
 
                 <hr>
@@ -239,12 +286,12 @@
                 <ul class="pager">
                     
                         <li class="previous">
-                            <a href="/article/flume启停脚本/" data-toggle="tooltip" data-placement="top" title="flume启停脚本">&larr; Previous Post</a>
+                            <a href="/article/hadoop为用户赋权限/" data-toggle="tooltip" data-placement="top" title="linux用户添加hdfs权限">&larr; Previous Post</a>
                         </li>
                     
                     
                         <li class="next">
-                            <a href="/article/常用名词/" data-toggle="tooltip" data-placement="top" title="常用名词解释(不断更新)">Next Post &rarr;</a>
+                            <a href="/article/记一次删除zookeeper的meta数据重启遇坑/" data-toggle="tooltip" data-placement="top" title="记一次删除zookeeper的meta数据重启遇坑">Next Post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -294,7 +341,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#给root或其他-xxx-user-赋hdfs权限"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">&#x7ED9;root&#x6216;&#x5176;&#x4ED6; xxx user &#x8D4B;hdfs&#x6743;&#x9650;</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#linux下默认是没有supergroup组的"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">Linux&#x4E0B;&#x9ED8;&#x8BA4;&#x662F;&#x6CA1;&#x6709;supergroup&#x7EC4;&#x7684;</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#查看hdfs用户的组是hadoop"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">&#x67E5;&#x770B;hdfs&#x7528;&#x6237;&#x7684;&#x7EC4;&#x662F;hadoop</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#linux添加supergroup组"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">Linux&#x6DFB;&#x52A0;supergroup&#x7EC4;</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#将root添加到supergroup"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">&#x5C06;root&#x6DFB;&#x52A0;&#x5230;supergroup</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#同步系统权限信息到hdfs会自动同步其他节点权限"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">&#x540C;&#x6B65;&#x7CFB;&#x7EDF;&#x6743;&#x9650;&#x4FE1;&#x606F;&#x5230;HDFS,&#x4F1A;&#x81EA;&#x52A8;&#x540C;&#x6B65;&#x5176;&#x4ED6;&#x8282;&#x70B9;&#x6743;&#x9650;</span></a></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#收录了一些名词及英文缩写的解释"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">&#x6536;&#x5F55;&#x4E86;&#x4E00;&#x4E9B;&#x540D;&#x8BCD;&#x53CA;&#x82F1;&#x6587;&#x7F29;&#x5199;&#x7684;&#x89E3;&#x91CA;</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#qps-query-per-second"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">QPS: query per second</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#ddl-amp-dml-amp-dcl-amp-tcl"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">DDL &amp; DML &amp; DCL &amp; TCL</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#ddldata-definition-language数据库定义语言statements-are-used-to-define-the-database-structure-or-schema"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">DDL&#xFF08;Data Definition Language&#xFF09;&#x6570;&#x636E;&#x5E93;&#x5B9A;&#x4E49;&#x8BED;&#x8A00;statements are used to define the database structure or schema.</span></a></li><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#dmldata-manipulation-language数据操纵语言statements-are-used-for-managing-data-within-schema-objects"><span class="toc-nav-number">1.2.2.</span> <span class="toc-nav-text">DML&#xFF08;Data Manipulation Language&#xFF09;&#x6570;&#x636E;&#x64CD;&#x7EB5;&#x8BED;&#x8A00;statements are used for managing data within schema objects.</span></a></li><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#dcldata-control-language数据库控制语言-授权角色控制等"><span class="toc-nav-number">1.2.3.</span> <span class="toc-nav-text">DCL&#xFF08;Data Control Language&#xFF09;&#x6570;&#x636E;&#x5E93;&#x63A7;&#x5236;&#x8BED;&#x8A00;  &#x6388;&#x6743;&#xFF0C;&#x89D2;&#x8272;&#x63A7;&#x5236;&#x7B49;</span></a></li><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#tcltransaction-control-language事务控制语言"><span class="toc-nav-number">1.2.4.</span> <span class="toc-nav-text">TCL&#xFF08;Transaction Control Language&#xFF09;&#x4E8B;&#x52A1;&#x63A7;&#x5236;&#x8BED;&#x8A00;</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#rpcremote-procedure-call远程过程调用"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">RPC(Remote Procedure Call)&#xFF1A;&#x8FDC;&#x7A0B;&#x8FC7;&#x7A0B;&#x8C03;&#x7528;</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#dwd-amp-dwb-amp-dws"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">DWD &amp; DWB &amp; DWS</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#dwd"><span class="toc-nav-number">1.4.1.</span> <span class="toc-nav-text">DWD&#xFF1A;</span></a></li><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#dwb"><span class="toc-nav-number">1.4.2.</span> <span class="toc-nav-text">DWB&#xFF1A;</span></a></li><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#dws"><span class="toc-nav-number">1.4.3.</span> <span class="toc-nav-text">DWS&#xFF1A;</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#spof"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">SPOF</span></a></li></ol></li></ol>
         
         </div>
       </aside>
@@ -314,7 +361,7 @@
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
                        
-                          <a class="tag" href="/tags/#hadoop" title="hadoop">hadoop</a>
+                          <a class="tag" href="/tags/#常用名词" title="常用名词">常用名词</a>
                         
                     </div>
                 </section>
