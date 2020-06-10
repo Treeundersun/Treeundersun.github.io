@@ -14,11 +14,11 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <title>
         
-          [Hexo] Theme Jepson - 果茶 | Blog
+          Linux命令(不断补充) - 果茶 | Blog
         
     </title>
 
-    <link rel="canonical" href="http://www.ruozedata.com/article/hexo-theme-jepson/">
+    <link rel="canonical" href="http://www.ruozedata.com/article/linux01/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -88,14 +88,14 @@
                     <div class="post-heading">
                         <div class="tags">
                             
-                              <a class="tag" href="/tags/#Hexo" title="Hexo">Hexo</a>
+                              <a class="tag" href="/tags/#ruozedata" title="ruozedata">ruozedata</a>
                             
                         </div>
-                        <h1>[Hexo] Theme Jepson</h1>
+                        <h1>Linux命令(不断补充)</h1>
                         <h2 class="subheading">This is hexo theme Demo.</h2>
                         <span class="meta">
                             Posted by 果茶 on
-                            2015-07-10
+                            2018-08-10
                         </span>
                     </div>
                 
@@ -212,75 +212,42 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <blockquote>
-<p>This Jepson theme created by <a href="http://www.ruozedata.com/">Jepson</a> modified from the original Porter <a href="https://github.com/YenYuHsuan/hexo-theme-beantech" target="_blank" rel="noopener">YuHsuan</a></p>
-</blockquote>
-<h1 id="blog-demo">Blog Demo</h1>
-<p>ruozedata官网 : <a href="http://www.ruozedata.com/">www.ruozedata.com</a></p>
-<p><img src="/img/article/ruozedata.png" alt="Theme Jepson"></p>
-<h1 id="install-hexo">Install Hexo</h1>
-<p>Install Node.js  and Git</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#For window</span><br><span class="line">Node.js https://nodejs.org/dist/v12.13.0/node-v12.13.0-x64.msi</span><br><span class="line">Git https://github.com/git-for-windows/git/releases/download/v2.24.0.windows.2/Git-2.24.0.2-64-bit.exe</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#For Mac</span><br><span class="line">brew install node</span><br><span class="line">brew install git</span><br></pre></td></tr></table></figure>
-<p>Install hexo</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span>For more:https://hexo.io/zh-cn/index.html</span><br></pre></td></tr></table></figure>
-<h1 id="theme-usage">Theme Usage</h1>
-<h2 id="init">Init</h2>
-<hr>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/hackeruncle/hackeruncle-hexo.git ./hackeruncle-hexo</span><br><span class="line"><span class="built_in">cd</span> hackeruncle-hexo</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
-<h2 id="modify">Modify</h2>
-<hr>
-<p>Modify <code>_config.yml</code> file with your own info.<br>
-Especially the section:</p>
-<h3 id="deployment">Deployment</h3>
-<p>Replace to your own repo, the name is the same as github user name!</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="attr">  type:</span> <span class="string">git</span></span><br><span class="line"><span class="attr">  repo:</span> <span class="string">git@github.com:&lt;git</span> <span class="string">user</span> <span class="string">name&gt;/&lt;git</span> <span class="string">user</span> <span class="string">name&gt;.github.io.git</span></span><br><span class="line"><span class="attr">  branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
-<h3 id="sidebar-settings">Sidebar settings</h3>
-<p>Copy your avatar image to <code>&lt;root&gt;/img/</code> and modify the <code>_config.yml</code>:</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">sidebar:</span> <span class="literal">true</span>    <span class="comment"># whether or not using Sidebar.</span></span><br><span class="line"><span class="attr">sidebar-about-description:</span> <span class="string">"&lt;your description&gt;"</span></span><br><span class="line"><span class="attr">sidebar-avatar:</span> <span class="string">img/&lt;your</span> <span class="string">avatar</span> <span class="string">path&gt;</span></span><br></pre></td></tr></table></figure>
-<p>and activate your personal widget you like</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">widgets:</span>         <span class="comment"># here are widget you can use, you can comment out</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">featured-tags</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">short-about</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">recent-posts</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">friends-blog</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">archive</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">category</span></span><br></pre></td></tr></table></figure>
-<p>if you want to add sidebar widget, please add at <code>layout/_widget</code>.</p>
-<h3 id="signature-setup">Signature Setup</h3>
-<p>Copy your signature image to <code>&lt;root&gt;/img/signature</code> and modify the <code>_config.yml</code>:</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">signature:</span> <span class="literal">true</span>   <span class="comment"># show signature</span></span><br><span class="line"><span class="attr">signature-img:</span> <span class="string">img/signature/&lt;your-signature-ID&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="go-to-top-icon-setup">Go to top icon Setup</h3>
-<p>My icon is using iron man, you can change to your own icon at <code>css/image</code>.</p>
-<h3 id="post-tag">Post tag</h3>
-<p>You can decide to show post tags or not.</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">home_posts_tag:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-<h3 id="markdown-render">Markdown render</h3>
-<p>My markdown render engine plugin is <a href="https://github.com/celsomiranda/hexo-renderer-markdown-it" target="_blank" rel="noopener">hexo-renderer-markdown-it</a>.</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Markdown-it config</span></span><br><span class="line"><span class="comment">## Docs: https://github.com/celsomiranda/hexo-renderer-markdown-it/wiki</span></span><br><span class="line"><span class="attr">markdown:</span></span><br><span class="line"><span class="attr">  render:</span></span><br><span class="line"><span class="attr">    html:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    xhtmlOut:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">    breaks:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    linkify:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    typographer:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    quotes:</span> <span class="string">'“”‘’'</span></span><br></pre></td></tr></table></figure>
-<p>and if you want to change the header anchor ‘ℬ’, you can go to <code>layout/post.ejs</code> to change it.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span>(<span class="string">"https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        anchors.options = &#123;</span><br><span class="line">          visible: <span class="string">'hover'</span>,</span><br><span class="line">          placement: <span class="string">'left'</span>,</span><br><span class="line">          icon: ℬ <span class="comment">// this is the header anchor "unicode" icon</span></span><br><span class="line">        &#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="hexo-basics">Hexo Basics</h2>
-<hr>
-<h3 id="push-hexo-file-to-github">Push hexo file to github:</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">'init'</span></span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
-<h3 id="push-hexo-blog-html-to-local">Push hexo blog html to local :</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo generate &amp;&amp; hexo server</span><br></pre></td></tr></table></figure>
-<p>open web: <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a></p>
-<h3 id="push-hexo-blog-html-to-github">Push hexo blog html to github :</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo deploy</span><br></pre></td></tr></table></figure>
-<p>open web: <a href="https://hackeruncle.github.io" target="_blank" rel="noopener">https://hackeruncle.github.io</a></p>
-<h1 id="have-fun-_">Have fun ^_^</h1>
-<hr>
-<!-- Place this tag in your head or just before your close body tag. -->
-<script async defer src="https://buttons.github.io/buttons.js"></script>
-<!-- Place this tag where you want the button to render. -->
-<p>Please <a class="github-button" href="https://github.com/hackeruncle/hackeruncle-hexo" data-icon="octicon-star" aria-label="Star Jepson/hackeruncle-hexo on GitHub" target="_blank" rel="noopener">Star</a> this Project if you like it! <a class="github-button" href="https://github.com/hackeruncle" aria-label="Follow @Jepson on GitHub" target="_blank" rel="noopener">Follow</a> would also be appreciated!<br>
-Peace!</p>
-
+                <h3 id="追加内容到文件"><strong>追加内容到文件</strong></h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;  &quot;  &gt;&gt;  /xx/xx</span><br></pre></td></tr></table></figure>
+<h3 id="用户组用户文件权限"><strong>用户组/用户/文件权限</strong></h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">chgrp 改变所属组</span><br><span class="line">chown 改变所属用户</span><br><span class="line">chmod 改变文件权限</span><br></pre></td></tr></table></figure>
+<h3 id="vi命令相关"><strong>vi命令相关</strong></h3>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">vi</span>   &amp;    i   &amp;    <span class="keyword">wq</span>   &amp;    wq!   &amp;    shift+<span class="keyword">z</span>+<span class="keyword">z</span></span><br><span class="line">    <span class="variable">a:</span>光标移到下一位</span><br><span class="line">    <span class="variable">g:</span>光标移到末尾</span><br><span class="line">    dd:删除指定行</span><br><span class="line">	d<span class="variable">g:</span>清空</span><br></pre></td></tr></table></figure>
+<h3 id="软链接相当于快捷方式"><strong>软链接–相当于快捷方式</strong></h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ln -s </span><br><span class="line">好处: </span><br><span class="line">	1.方便组件版本更换   </span><br><span class="line">	2.磁盘满了,移走内容,ln 指向旧,修正权限</span><br></pre></td></tr></table></figure>
+<h3 id="在当前目录查找具体内容"><strong>在当前目录查找具体内容</strong></h3>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cat</span> * | <span class="keyword">grep</span>  xxx  在当前目录下所有文件中找 xxx</span><br></pre></td></tr></table></figure>
+<h3 id="将文件内容处理返回特定值"><strong>将文件内容处理返回特定值</strong></h3>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cat</span> /xx/xx | sed <span class="string">"/^#/d"</span></span><br><span class="line">处理<span class="keyword">cat</span> 返回值,返回换行切割的数组 array</span><br></pre></td></tr></table></figure>
+<h3 id="根据-pid-找-端口号"><strong>根据 pid 找 端口号</strong></h3>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ps</span> -ef | <span class="keyword">grep</span> 服务</span><br><span class="line">    找出 pid  </span><br><span class="line">netstat -nlp | <span class="keyword">grep</span> pid</span><br><span class="line">lsof -i:<span class="number">60020</span></span><br><span class="line">    找出 端口号</span><br></pre></td></tr></table></figure>
+<h3 id="软件多版本查看更换"><strong>软件多版本查看更换</strong></h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">alternatives --config xxx:</span><br><span class="line">    多版本升级</span><br><span class="line">    alternatives --config hadoop (显示版本)</span><br><span class="line">    alternatives --config hadoop 1(选择版本)</span><br></pre></td></tr></table></figure>
+<h3 id="查询最近修改的文件"><strong>查询最近修改的文件</strong></h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">find -mmin -60			（分钟）     -<span class="built_in">type</span> f   （只显示文件，不显示文件夹）</span><br><span class="line">     -mtime -1			（天）</span><br></pre></td></tr></table></figure>
+<h3 id="计算和检查sha1消息xx"><strong>计算和检查SHA1消息</strong>xx</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sha1sum /xx/xx</span><br><span class="line">常用于校验下载文件是否完整(如CDH,安装包很大,可能会丢包)</span><br></pre></td></tr></table></figure>
+<h3 id="常用查看系统资源命令"><strong>常用查看系统资源命令</strong></h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">top      显示当前系统正在执行的进程的相关信息</span><br><span class="line">free     查看系统可用内存</span><br><span class="line">df [-h]  可以获取硬盘信息</span><br></pre></td></tr></table></figure>
+<h3 id="快速干掉hadoop相关进程"><strong>快速干掉hadoop相关进程</strong></h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">kill</span> -9 $(pgrep -f hadoop)</span><br></pre></td></tr></table></figure>
+<h3 id="yum相关命令"><strong>yum相关命令</strong></h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">1.使用YUM查找软件包</span><br><span class="line">yum search</span><br><span class="line">2.列出所有可安装的软件包</span><br><span class="line">yum list</span><br><span class="line">3.列出所有可更新的软件包</span><br><span class="line">yum list updates</span><br><span class="line">4.列出所有已安装的软件包</span><br><span class="line">yum list installed</span><br><span class="line">5.列出所有已安装但不在 Yum Repository 内的软件包</span><br><span class="line">yum list extras</span><br></pre></td></tr></table></figure>
                 
 
                 <hr>
                 <!-- Pager -->
                 <ul class="pager">
                     
-                        <li class="previous">
-                            <a href="/article/thanks/" data-toggle="tooltip" data-placement="top" title="感谢一路以来帮助过我的人们">&larr; Previous Post</a>
-                        </li>
                     
+                        <li class="next">
+                            <a href="/article/thanks/" data-toggle="tooltip" data-placement="top" title="感谢一路以来帮助过我的人们">Next Post &rarr;</a>
+                        </li>
                     
                 </ul>
 
@@ -329,7 +296,7 @@ Peace!</p>
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#blog-demo"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Blog Demo</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#install-hexo"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">Install Hexo</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#theme-usage"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">Theme Usage</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#init"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">Init</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#modify"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">Modify</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#deployment"><span class="toc-nav-number">3.2.1.</span> <span class="toc-nav-text">Deployment</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#sidebar-settings"><span class="toc-nav-number">3.2.2.</span> <span class="toc-nav-text">Sidebar settings</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#signature-setup"><span class="toc-nav-number">3.2.3.</span> <span class="toc-nav-text">Signature Setup</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#go-to-top-icon-setup"><span class="toc-nav-number">3.2.4.</span> <span class="toc-nav-text">Go to top icon Setup</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#post-tag"><span class="toc-nav-number">3.2.5.</span> <span class="toc-nav-text">Post tag</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#markdown-render"><span class="toc-nav-number">3.2.6.</span> <span class="toc-nav-text">Markdown render</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#hexo-basics"><span class="toc-nav-number">3.3.</span> <span class="toc-nav-text">Hexo Basics</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#push-hexo-file-to-github"><span class="toc-nav-number">3.3.1.</span> <span class="toc-nav-text">Push hexo file to github:</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#push-hexo-blog-html-to-local"><span class="toc-nav-number">3.3.2.</span> <span class="toc-nav-text">Push hexo blog html to local :</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#push-hexo-blog-html-to-github"><span class="toc-nav-number">3.3.3.</span> <span class="toc-nav-text">Push hexo blog html to github :</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#have-fun-_"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">Have fun ^_^</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#追加内容到文件"><span class="toc-nav-number">1.</span> <span class="toc-nav-text"><strong>&#x8FFD;&#x52A0;&#x5185;&#x5BB9;&#x5230;&#x6587;&#x4EF6;</strong></span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#用户组用户文件权限"><span class="toc-nav-number">2.</span> <span class="toc-nav-text"><strong>&#x7528;&#x6237;&#x7EC4;/&#x7528;&#x6237;/&#x6587;&#x4EF6;&#x6743;&#x9650;</strong></span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#vi命令相关"><span class="toc-nav-number">3.</span> <span class="toc-nav-text"><strong>vi&#x547D;&#x4EE4;&#x76F8;&#x5173;</strong></span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#软链接相当于快捷方式"><span class="toc-nav-number">4.</span> <span class="toc-nav-text"><strong>&#x8F6F;&#x94FE;&#x63A5;&#x2013;&#x76F8;&#x5F53;&#x4E8E;&#x5FEB;&#x6377;&#x65B9;&#x5F0F;</strong></span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#在当前目录查找具体内容"><span class="toc-nav-number">5.</span> <span class="toc-nav-text"><strong>&#x5728;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x67E5;&#x627E;&#x5177;&#x4F53;&#x5185;&#x5BB9;</strong></span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#将文件内容处理返回特定值"><span class="toc-nav-number">6.</span> <span class="toc-nav-text"><strong>&#x5C06;&#x6587;&#x4EF6;&#x5185;&#x5BB9;&#x5904;&#x7406;&#x8FD4;&#x56DE;&#x7279;&#x5B9A;&#x503C;</strong></span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#根据-pid-找-端口号"><span class="toc-nav-number">7.</span> <span class="toc-nav-text"><strong>&#x6839;&#x636E; pid &#x627E; &#x7AEF;&#x53E3;&#x53F7;</strong></span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#软件多版本查看更换"><span class="toc-nav-number">8.</span> <span class="toc-nav-text"><strong>&#x8F6F;&#x4EF6;&#x591A;&#x7248;&#x672C;&#x67E5;&#x770B;&#x66F4;&#x6362;</strong></span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#查询最近修改的文件"><span class="toc-nav-number">9.</span> <span class="toc-nav-text"><strong>&#x67E5;&#x8BE2;&#x6700;&#x8FD1;&#x4FEE;&#x6539;&#x7684;&#x6587;&#x4EF6;</strong></span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#计算和检查sha1消息xx"><span class="toc-nav-number">10.</span> <span class="toc-nav-text"><strong>&#x8BA1;&#x7B97;&#x548C;&#x68C0;&#x67E5;SHA1&#x6D88;&#x606F;</strong>xx</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#常用查看系统资源命令"><span class="toc-nav-number">11.</span> <span class="toc-nav-text"><strong>&#x5E38;&#x7528;&#x67E5;&#x770B;&#x7CFB;&#x7EDF;&#x8D44;&#x6E90;&#x547D;&#x4EE4;</strong></span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#快速干掉hadoop相关进程"><span class="toc-nav-number">12.</span> <span class="toc-nav-text"><strong>&#x5FEB;&#x901F;&#x5E72;&#x6389;hadoop&#x76F8;&#x5173;&#x8FDB;&#x7A0B;</strong></span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#yum相关命令"><span class="toc-nav-number">13.</span> <span class="toc-nav-text"><strong>yum&#x76F8;&#x5173;&#x547D;&#x4EE4;</strong></span></a></li></ol>
         
         </div>
       </aside>
@@ -349,7 +316,7 @@ Peace!</p>
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
                        
-                          <a class="tag" href="/tags/#Hexo" title="Hexo">Hexo</a>
+                          <a class="tag" href="/tags/#ruozedata" title="ruozedata">ruozedata</a>
                         
                     </div>
                 </section>
