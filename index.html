@@ -254,50 +254,6 @@
 
 <div class="post-preview">
 
-    <a href="/article/hexo-theme-jepson/">
-        <h2 class="post-title">
-            
-                <i class="fa fa-thumb-tack" style="color:#F4711F" ></i>
-                <!-- <i class="fa fa-thumb-tack" style="color:#F89E8C" ></i> -->
-                <!-- <i class="fa fa-thumb-tack" style="color:#1CB7ED" ></i> -->
-                <font color=#F4711F>置顶</font>
-                <!-- <font color=#F89E8C>置顶</font>  -->
-                <!-- <font color=#1CB7ED>置顶</font>  -->
-                                 
-            [Hexo] Theme Jepson
-        </h2>
-        <h3 class="post-subtitle">
-            This is hexo theme Demo.
-        </h3>
-        <div class="post-content-preview">
-            
-This Jepson theme created by Jepson modified from the original Porter YuHsuan
-
-Blog Demo
-ruozedata官网 : www.ruozedata.com
-
-Install Hexo
-Install Node.js  and Git
-12345678#For windowNode.js https://n......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 果茶 on
-            2015-07-10
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#Hexo" title="Hexo">Hexo</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
     <a href="/article/linux01/">
         <h2 class="post-title">
                                  
@@ -323,6 +279,111 @@ vi命令相关
         <div class="tags">
             
               <a href="/tags/#ruozedata" title="ruozedata">ruozedata</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/article/phoenix版本/">
+        <h2 class="post-title">
+                                 
+            Phoenix5.0.0-HBase2.0.0对接CDH-HBase2.0.0失败
+        </h2>
+        <h3 class="post-subtitle">
+            This is hexo theme Demo.
+        </h3>
+        <div class="post-content-preview">
+            调研phoenix时发现版本问题
+官网安装配置了Phoenix5.0.0-HBase2.0.0以对接CDH中的2.0.0HBase
+在测试时,建立二级索引插入数据时报错:
+123456Error: org.apache.hadoop.hbase.client.RetriesExhaustedWithDetailsException:Failed 1 action: org.apache.ph......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 果茶 on
+            2020-01-10
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#phoenix" title="phoenix">phoenix</a>
+            
+              <a href="/tags/#hbase" title="hbase">hbase</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/article/phoenix常用/">
+        <h2 class="post-title">
+                                 
+            Phoenix常用
+        </h2>
+        <h3 class="post-subtitle">
+            This is hexo theme Demo.
+        </h3>
+        <div class="post-content-preview">
+            普通sql语法
+
+和mysql相比,除insert和update合并为upsert外,基本一致
+
+删除命令
+123drop TABLE if EXISTS TOWER_INFO（表名）drop index  TOWER_IDX（索引名） ON TOWER_INFO（表名）；DROP SEQUENCE IF EXISTS test_sequence
+查看索引
+123select TABLE_N......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 果茶 on
+            2019-12-01
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#phoenix" title="phoenix">phoenix</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/article/hadoop为用户赋权限/">
+        <h2 class="post-title">
+                                 
+            linux用户添加hdfs权限
+        </h2>
+        <h3 class="post-subtitle">
+            This is hexo theme Demo.
+        </h3>
+        <div class="post-content-preview">
+            给root或其他 xxx user 赋hdfs权限
+通常会把 root 或者需要的用户添加到 supergroup组，但Linux下默认是没有supergroup组。
+Linux下默认是没有supergroup组的
+# hadoop:x:994:hdfs,mapred,yarn
+1cat /etc/group
+查看hdfs用户的组是hadoop
+# hdfs:x:995:992:Hadoop......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 果茶 on
+            2019-03-03
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#hadoop" title="hadoop">hadoop</a>
             
         </div>
     
@@ -367,7 +428,7 @@ vi命令相关
     <div class="tags">
         
             
-            <a href="/tags/#Hexo" title="Hexo" rel="1">Hexo</a>
+            <a href="/tags/#hadoop" title="hadoop" rel="1">hadoop</a>
             
         
             
@@ -375,7 +436,15 @@ vi命令相关
             
         
             
+            <a href="/tags/#phoenix" title="phoenix" rel="2">phoenix</a>
+            
+        
+            
             <a href="/tags/#随笔" title="随笔" rel="1">随笔</a>
+            
+        
+            
+            <a href="/tags/#hbase" title="hbase" rel="1">hbase</a>
             
         
     </div>
@@ -431,15 +500,23 @@ vi命令相关
     <ul>
       
         <li>
+          <a href="/article/phoenix版本/">Phoenix5.0.0-HBase2.0.0对接CDH-HBase2.0.0失败</a>
+        </li>
+      
+        <li>
+          <a href="/article/phoenix常用/">Phoenix常用</a>
+        </li>
+      
+        <li>
+          <a href="/article/hadoop为用户赋权限/">linux用户添加hdfs权限</a>
+        </li>
+      
+        <li>
           <a href="/article/linux01/">Linux命令(不断补充)</a>
         </li>
       
         <li>
           <a href="/article/thanks/">感谢一路以来帮助过我的人们</a>
-        </li>
-      
-        <li>
-          <a href="/article/hexo-theme-jepson/">[Hexo] Theme Jepson</a>
         </li>
       
     </ul>
@@ -462,7 +539,7 @@ vi命令相关
         
     <h5>ARCHIVES</h5>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">2</span></li></ul>
     </div>
 
         <hr>

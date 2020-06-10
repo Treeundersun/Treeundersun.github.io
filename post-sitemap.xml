@@ -7,6 +7,30 @@
     </url>
 
     <url>
+        <loc>http://www.ruozedata.com/article/hadoop%E4%B8%BA%E7%94%A8%E6%88%B7%E8%B5%8B%E6%9D%83%E9%99%90/</loc>
+        <lastmod>2020-06-10T16:52:20.578Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://www.ruozedata.com/article/phoenix%E5%B8%B8%E7%94%A8/</loc>
+        <lastmod>2020-06-10T16:36:29.183Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://www.ruozedata.com/article/phoenix%E7%89%88%E6%9C%AC/</loc>
+        <lastmod>2020-06-10T16:35:56.418Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://www.ruozedata.com/article/thanks/</loc>
         <lastmod>2020-06-10T12:25:30.360Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -17,14 +41,6 @@
     <url>
         <loc>http://www.ruozedata.com/article/linux01/</loc>
         <lastmod>2020-06-10T12:22:46.863Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://www.ruozedata.com/article/hexo-theme-jepson/</loc>
-        <lastmod>2020-06-10T09:26:21.466Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
