@@ -7,8 +7,32 @@
     </url>
 
     <url>
+        <loc>http://www.ruozedata.com/article/flume%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E5%92%8C%E6%95%85%E9%9A%9C%E8%BD%AC%E7%A7%BB/</loc>
+        <lastmod>2020-06-11T15:00:14.278Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://www.ruozedata.com/article/spark%E7%BC%96%E8%AF%91%E9%81%87%E5%9D%91/</loc>
+        <lastmod>2020-06-11T09:42:38.077Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://www.ruozedata.com/article/flink%E7%BC%96%E8%AF%91%E9%81%87%E5%9D%91/</loc>
+        <lastmod>2020-06-11T09:34:55.586Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://www.ruozedata.com/article/%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%88%A0%E9%99%A4zookeeper%E7%9A%84meta%E6%95%B0%E6%8D%AE%E9%87%8D%E5%90%AF%E9%81%87%E5%9D%91/</loc>
-        <lastmod>2020-06-10T17:47:59.506Z</lastmod>
+        <lastmod>2020-06-11T09:30:22.914Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -16,31 +40,7 @@
 
     <url>
         <loc>http://www.ruozedata.com/article/%E5%B8%B8%E7%94%A8%E5%90%8D%E8%AF%8D/</loc>
-        <lastmod>2020-06-10T17:37:44.462Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://www.ruozedata.com/article/flume%E5%90%AF%E5%81%9C%E8%84%9A%E6%9C%AC/</loc>
-        <lastmod>2020-06-10T17:23:36.794Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://www.ruozedata.com/article/hadoop%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95/</loc>
-        <lastmod>2020-06-10T17:09:28.396Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://www.ruozedata.com/article/hadoop%E4%B8%BA%E7%94%A8%E6%88%B7%E8%B5%8B%E6%9D%83%E9%99%90/</loc>
-        <lastmod>2020-06-10T17:07:33.576Z</lastmod>
+        <lastmod>2020-06-11T09:30:17.135Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -48,7 +48,7 @@
 
     <url>
         <loc>http://www.ruozedata.com/article/phoenix%E5%B8%B8%E7%94%A8/</loc>
-        <lastmod>2020-06-10T16:36:29.183Z</lastmod>
+        <lastmod>2020-06-11T09:30:07.100Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -56,7 +56,39 @@
 
     <url>
         <loc>http://www.ruozedata.com/article/phoenix%E7%89%88%E6%9C%AC/</loc>
-        <lastmod>2020-06-10T16:35:56.418Z</lastmod>
+        <lastmod>2020-06-11T09:29:55.979Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://www.ruozedata.com/article/linux01/</loc>
+        <lastmod>2020-06-11T09:29:47.498Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://www.ruozedata.com/article/hadoop%E4%B8%BA%E7%94%A8%E6%88%B7%E8%B5%8B%E6%9D%83%E9%99%90/</loc>
+        <lastmod>2020-06-11T09:29:41.003Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://www.ruozedata.com/article/hadoop%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95/</loc>
+        <lastmod>2020-06-11T09:29:29.270Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://www.ruozedata.com/article/flume%E5%90%AF%E5%81%9C%E8%84%9A%E6%9C%AC/</loc>
+        <lastmod>2020-06-11T09:29:19.910Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -65,14 +97,6 @@
     <url>
         <loc>http://www.ruozedata.com/article/thanks/</loc>
         <lastmod>2020-06-10T12:25:30.360Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://www.ruozedata.com/article/linux01/</loc>
-        <lastmod>2020-06-10T12:22:46.863Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

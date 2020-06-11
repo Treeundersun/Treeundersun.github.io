@@ -14,11 +14,11 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <title>
         
-          常用名词解释(不断更新) - 果茶 | Blog
+          flink 1.10编译部署遇坑 - 果茶 | Blog
         
     </title>
 
-    <link rel="canonical" href="http://www.ruozedata.com/article/常用名词/">
+    <link rel="canonical" href="http://www.ruozedata.com/article/flink编译遇坑/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -88,14 +88,14 @@
                     <div class="post-heading">
                         <div class="tags">
                             
-                              <a class="tag" href="/tags/#常用名词" title="常用名词">常用名词</a>
+                              <a class="tag" href="/tags/#flink" title="flink">flink</a>
                             
                         </div>
-                        <h1>常用名词解释(不断更新)</h1>
+                        <h1>flink 1.10编译部署遇坑</h1>
                         <h2 class="subheading"></h2>
                         <span class="meta">
                             Posted by 果茶 on
-                            2019-02-04
+                            2019-07-01
                         </span>
                     </div>
                 
@@ -212,73 +212,49 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <h4 id="收录了一些名词及英文缩写的解释">收录了一些名词及英文缩写的解释</h4>
-<h5 id="qps-query-per-second">QPS: query per second</h5>
+                <h3 id="调研flink编译release部署到集群遇坑">调研flink,编译release部署到集群遇坑</h3>
+<h4 id="flink-的-release-包-源码编译">flink 的 release 包 源码编译</h4>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn clean install -DskipTests -Dscala-2.12 -Pvendor-repos -Pinclude-hadoop -Dhadoop.version=2.6.0-cdh5.16.2</span><br></pre></td></tr></table></figure>
+<h5 id="编译报错-1-因为是cdh版的hadoop">编译报错 1( 因为是cdh版的hadoop ):</h5>
 <blockquote>
-<p>每秒请求次数:业务数据量指标</p>
+<p>Failed to execute goal on project flink-hadoop-fs:<br>
+Could not resolve dependencies for project org.apache.flink:flink-hadoop-fs:jar:1.10.0:<br>
+The following artifacts could not be resolved: org.apache.flink:flink-shaded-hadoop-2:jar:2.6.0-cdh5.16.2-9.0,<br>
+org.apache.hadoop:hadoop-hdfs:jar:tests:2.6.0-cdh5.16.2, org.apache.hadoop:hadoop-common:jar:tests:2.6.0-cdh5.16.2:<br>
+Failure to find org.apache.flink:flink-shaded-hadoop-2:jar:2.6.0-cdh5.16.2-9.0<br>
+in <a href="https://maven.aliyun.com/repository/central" target="_blank" rel="noopener">https://maven.aliyun.com/repository/central</a> was cached in the local repository,<br>
+resolution will not be reattempted until the update interval of alimaven has elapsed or updates are forced -&gt; [Help 1]</p>
 </blockquote>
-<h5 id="ddl-amp-dml-amp-dcl-amp-tcl">DDL &amp; DML &amp; DCL &amp; TCL</h5>
-<h6 id="ddldata-definition-language数据库定义语言statements-are-used-to-define-the-database-structure-or-schema">DDL（Data Definition Language）数据库定义语言statements are used to define the database structure or schema.</h6>
-<blockquote>
-<p>DDL是SQL语言的四大功能之一。<br>
-	用于定义数据库的三级结构，包括外模式、概念模式、内模式及其相互之间的映像，定义数据的完整性、安	全控制等约束<br>
-	DDL不需要commit.<br>
-	CREATE<br>
-	ALTER<br>
-	DROP<br>
-	TRUNCATE<br>
-	COMMENT<br>
-	RENAME</p>
-</blockquote>
-<h6 id="dmldata-manipulation-language数据操纵语言statements-are-used-for-managing-data-within-schema-objects">DML（Data Manipulation Language）数据操纵语言statements are used for managing data within schema objects.</h6>
-<blockquote>
-<p>由DBMS提供，用于让用户或程序员使用，实现对数据库中数据的操作。<br>
-	DML分成交互型DML和嵌入型DML两类。<br>
-	依据语言的级别，DML又可分成过程性DML和非过程性DML两种。<br>
-	需要commit.<br>
-	SELECT<br>
-	INSERT<br>
-	UPDATE<br>
-	DELETE<br>
-	MERGE<br>
-	CALL<br>
-	EXPLAIN PLAN<br>
-	LOCK TABLE</p>
-</blockquote>
-<h6 id="dcldata-control-language数据库控制语言-授权角色控制等">DCL（Data Control Language）数据库控制语言  授权，角色控制等</h6>
-<blockquote>
-<p>GRANT 授权<br>
-	REVOKE 取消授权</p>
-</blockquote>
-<h6 id="tcltransaction-control-language事务控制语言">TCL（Transaction Control Language）事务控制语言</h6>
-<blockquote>
-<p>SAVEPOINT 设置保存点<br>
-	ROLLBACK  回滚<br>
-	SET TRANSACTION</p>
-</blockquote>
-<h5 id="rpcremote-procedure-call远程过程调用">RPC(Remote Procedure Call)：远程过程调用</h5>
-<blockquote>
-<pre><code>简单的理解是一个节点请求另一个节点提供的服务
+<p>参考博客:  <a href="https://blog.csdn.net/h335146502/article/details/96483310" target="_blank" rel="noopener">https://blog.csdn.net/h335146502/article/details/96483310</a></p>
+<p>原因:<br>
+原因是cdh 的 flink-shaded-hadoop-2 的jar 包在mvn 中央仓库是没有编译版本的</p>
+<p>解决:<br>
+我们需要先对flink 的前置依赖 flink-shaded-hadoop-2 进行打包，在进行编译<br>
+(1)获取flink-shaded  git 源码:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/apache/flink-shaded.git</span><br></pre></td></tr></table></figure>
+<p>(2)根据自己缺少的版本切换对应的代码分支，这里我缺少的是9.0版本的flink-shaded-hadoop-2<br>
+git checkout  release-9.0<br>
+版本在报错信息里找: Failure to find xxx.flink-shaded-hadoop-2:jar:2.6.0-cdh5.16.2-9.0<br>
+(3)编译前修改 flink-shaded 的 pom 文件, profiles添加配置, 具体配置附在最下方<br>
+…<br>
+(4)编译flink-shaded</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn  clean install -DskipTests -Dscala-2.12 -Drat.skip=<span class="literal">true</span> -Pvendor-repos  -Dhadoop.version=2.6.0-cdh5.16.2</span><br></pre></td></tr></table></figure>
+<p>(5)重新编译flink</p>
+<h5 id="编译报错-2">编译报错 2:</h5>
+<pre><code>Browserslist: caniuse-lite is outdated. Please run next command `npm update`
 </code></pre>
-</blockquote>
-<h5 id="dwd-amp-dwb-amp-dws">DWD &amp; DWB &amp; DWS</h5>
-<h6 id="dwd">DWD：</h6>
-<blockquote>
-<p>data warehouse detail 细节数据层，有的也称为 ODS层，是业务层与数据仓库的隔离层。</p>
-</blockquote>
-<h6 id="dwb">DWB：</h6>
-<blockquote>
-<p>data warehouse base 基础数据层，存储的是客观数据，一般用作中间层，可以认为是大量指标的数据层。</p>
-</blockquote>
-<h6 id="dws">DWS：</h6>
-<blockquote>
-<p>data warehouse service 服务数据层，基于DWB上的基础数据，整合汇总成分析某一个主题域的服务数据，一般是宽表。</p>
-</blockquote>
-<h5 id="spof">SPOF</h5>
-<blockquote>
-<p>单点故障: 集群中单个节点挂掉,需要修复的情况</p>
-</blockquote>
-
+<p>解决:<br>
+安装 node.js 和 npm<br>
+(1) <code>wget https://nodejs.org/dist/v13.9.0/node-v13.9.0-linux-x64.tar.gz</code><br>
+解压测试 .<code>/bin/node -v</code><br>
+(2) 创建软连接</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@ruozedata001 ~]<span class="comment"># ln -s /home/ruoze/app/node-v13.9.0-linux-x64/bin/npm /usr/local/bin/</span></span><br><span class="line">[root@ruozedata001 ~]<span class="comment"># ln -s /home/ruoze/app/node-v13.9.0-linux-x64/bin/node /usr/local/bin/</span></span><br></pre></td></tr></table></figure>
+<h4 id="配置文件">配置文件</h4>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">vi conf/flink-conf.yaml</span><br><span class="line">    jobmanager.rpc.address: ruozedata001</span><br><span class="line">    jobmanager.rpc.port: 6123</span><br><span class="line">    jobmanager.heap.size: 1024m(默认1024,生产肯定要调)</span><br><span class="line">    taskmanager.numberOfTaskSlots: 4</span><br><span class="line">    parallelism.default: 1</span><br><span class="line">    rest.port: 18081    </span><br><span class="line">vi slaves</span><br><span class="line">    hostname (ex.ruozedata001)</span><br></pre></td></tr></table></figure>
+<h4 id="启动测试">启动测试</h4>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bin/start-cluster.sh</span><br></pre></td></tr></table></figure>
+<p>jps检验:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@ruozedata001 ~]<span class="comment"># jps</span></span><br><span class="line">    TaskManagerRunner</span><br><span class="line">    StandaloneSessionClusterEntrypoint</span><br></pre></td></tr></table></figure>
                 
 
                 <hr>
@@ -286,12 +262,12 @@
                 <ul class="pager">
                     
                         <li class="previous">
-                            <a href="/article/hadoop为用户赋权限/" data-toggle="tooltip" data-placement="top" title="linux用户添加hdfs权限">&larr; Previous Post</a>
+                            <a href="/article/phoenix常用/" data-toggle="tooltip" data-placement="top" title="Phoenix常用">&larr; Previous Post</a>
                         </li>
                     
                     
                         <li class="next">
-                            <a href="/article/记一次删除zookeeper的meta数据重启遇坑/" data-toggle="tooltip" data-placement="top" title="记一次删除zookeeper的meta数据重启遇坑">Next Post &rarr;</a>
+                            <a href="/article/flume启停脚本/" data-toggle="tooltip" data-placement="top" title="flume启停脚本">Next Post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -341,7 +317,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#收录了一些名词及英文缩写的解释"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">&#x6536;&#x5F55;&#x4E86;&#x4E00;&#x4E9B;&#x540D;&#x8BCD;&#x53CA;&#x82F1;&#x6587;&#x7F29;&#x5199;&#x7684;&#x89E3;&#x91CA;</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#qps-query-per-second"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">QPS: query per second</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#ddl-amp-dml-amp-dcl-amp-tcl"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">DDL &amp; DML &amp; DCL &amp; TCL</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#ddldata-definition-language数据库定义语言statements-are-used-to-define-the-database-structure-or-schema"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">DDL&#xFF08;Data Definition Language&#xFF09;&#x6570;&#x636E;&#x5E93;&#x5B9A;&#x4E49;&#x8BED;&#x8A00;statements are used to define the database structure or schema.</span></a></li><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#dmldata-manipulation-language数据操纵语言statements-are-used-for-managing-data-within-schema-objects"><span class="toc-nav-number">1.2.2.</span> <span class="toc-nav-text">DML&#xFF08;Data Manipulation Language&#xFF09;&#x6570;&#x636E;&#x64CD;&#x7EB5;&#x8BED;&#x8A00;statements are used for managing data within schema objects.</span></a></li><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#dcldata-control-language数据库控制语言-授权角色控制等"><span class="toc-nav-number">1.2.3.</span> <span class="toc-nav-text">DCL&#xFF08;Data Control Language&#xFF09;&#x6570;&#x636E;&#x5E93;&#x63A7;&#x5236;&#x8BED;&#x8A00;  &#x6388;&#x6743;&#xFF0C;&#x89D2;&#x8272;&#x63A7;&#x5236;&#x7B49;</span></a></li><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#tcltransaction-control-language事务控制语言"><span class="toc-nav-number">1.2.4.</span> <span class="toc-nav-text">TCL&#xFF08;Transaction Control Language&#xFF09;&#x4E8B;&#x52A1;&#x63A7;&#x5236;&#x8BED;&#x8A00;</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#rpcremote-procedure-call远程过程调用"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">RPC(Remote Procedure Call)&#xFF1A;&#x8FDC;&#x7A0B;&#x8FC7;&#x7A0B;&#x8C03;&#x7528;</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#dwd-amp-dwb-amp-dws"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">DWD &amp; DWB &amp; DWS</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#dwd"><span class="toc-nav-number">1.4.1.</span> <span class="toc-nav-text">DWD&#xFF1A;</span></a></li><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#dwb"><span class="toc-nav-number">1.4.2.</span> <span class="toc-nav-text">DWB&#xFF1A;</span></a></li><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#dws"><span class="toc-nav-number">1.4.3.</span> <span class="toc-nav-text">DWS&#xFF1A;</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#spof"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">SPOF</span></a></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#调研flink编译release部署到集群遇坑"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">&#x8C03;&#x7814;flink,&#x7F16;&#x8BD1;release&#x90E8;&#x7F72;&#x5230;&#x96C6;&#x7FA4;&#x9047;&#x5751;</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#flink-的-release-包-源码编译"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">flink &#x7684; release &#x5305; &#x6E90;&#x7801;&#x7F16;&#x8BD1;</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#编译报错-1-因为是cdh版的hadoop"><span class="toc-nav-number">1.1.1.</span> <span class="toc-nav-text">&#x7F16;&#x8BD1;&#x62A5;&#x9519; 1( &#x56E0;&#x4E3A;&#x662F;cdh&#x7248;&#x7684;hadoop ):</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#编译报错-2"><span class="toc-nav-number">1.1.2.</span> <span class="toc-nav-text">&#x7F16;&#x8BD1;&#x62A5;&#x9519; 2:</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#配置文件"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">&#x914D;&#x7F6E;&#x6587;&#x4EF6;</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#启动测试"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">&#x542F;&#x52A8;&#x6D4B;&#x8BD5;</span></a></li></ol></li></ol>
         
         </div>
       </aside>
@@ -361,7 +337,7 @@
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
                        
-                          <a class="tag" href="/tags/#常用名词" title="常用名词">常用名词</a>
+                          <a class="tag" href="/tags/#flink" title="flink">flink</a>
                         
                     </div>
                 </section>
