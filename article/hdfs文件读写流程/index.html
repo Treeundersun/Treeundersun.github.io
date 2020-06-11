@@ -14,7 +14,7 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <title>
         
-          果茶 | Blog
+          hdfs文件读写流程 - 果茶 | Blog
         
     </title>
 
@@ -71,7 +71,7 @@
 <style type="text/css">
     header.intro-header{
         
-            background-image: url('/img/article_header/article_bg.jpg')
+            background-image: url('/img/article_header/article_header.png')
             /*post*/
         
     }
@@ -88,12 +88,14 @@
                     <div class="post-heading">
                         <div class="tags">
                             
+                              <a class="tag" href="/tags/#hadoop" title="hadoop">hadoop</a>
+                            
                         </div>
-                        <h1></h1>
+                        <h1>hdfs文件读写流程</h1>
                         <h2 class="subheading"></h2>
                         <span class="meta">
                             Posted by 果茶 on
-                            2020-06-12
+                            2019-03-12
                         </span>
                     </div>
                 
@@ -210,16 +212,45 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                
+                <h2 id="hdfs文件读写流程">hdfs文件读写流程</h2>
+<p>HDFS 文件读写流程<br>
+两个核心对象：FSDataOutputStream、FSDataInputStream</p>
+<h3 id="文件写流程">文件写流程</h3>
+<p>1 Client调用FileSystem.create(filePath)方法，与NN进行【rpc】通信，check是否存在及是否有权限创建；假如不ok，就返回错误信息；假如ok，就创建一个新文件，不关联任何的block块，返回一个FSDataOutputStream对象；</p>
+<p>2 Client调用FSDataOutputStream对象的write()方法，先将第一块的第一个副本写到第一个DN，第一个副本写完；就传输给第二个DN，第二个副本写完；就传输给第三个DN，第三个副本写完，就返回一个ack packet确认包给第二个DN，第二个DN接收到第三个的ack packet确认包加上自身ok，就返回一个ack packet确认包给第一个DN，第一个DN接收到第二个DN的ack packet确认包加上自身ok，就返回ack packet确认包给FSDataOutputStream对象，标志第一个块 3个副本写完。然后余下的块按照上述方式依次写入。</p>
+<p>3 当向文件写入数据完成后，<br>
+Client调用FSDataOutputStream.close()方法，关闭输出流。</p>
+<p>4 再调用FileSystem.complete()方法，告诉NN该文件写入成功。<br>
+<img src="https://raw.githubusercontent.com/Treeundersun/Treeundersun.github.io/master/article/hdfs%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99%E6%B5%81%E7%A8%8B/pic2.png" alt=""></p>
+<h3 id="文件读流程">文件读流程</h3>
+<p>1 Client调用FileSystem.open(filePath)方法，<br>
+与NN进行【rpc】通信，返回该文件的部分或者全部的block列表，<br>
+也就是返回FSDataInputStream对象。</p>
+<p>2 Client调用FSDataInputStream对象read()方法；</p>
+<p>a.与第一个块最近的DN进行read,读取完成后，会check；<br>
+假如ok，就关闭与当前DN的通信；假如失败，会记录<br>
+失败块+DN信息，下次不会再读取；那么会去该块的<br>
+第二个DN地址读取。</p>
+<p>b.然后去第二个块的最近的DN上通信读取，check后，关闭通信。</p>
+<p>c.假如block列表读取完成后，文件还未结束，<br>
+就再次FileSystem会从NN获取该文件的下一批次的block列表。<br>
+(感觉就是连续的数据流，对于客户端操作是透明无感知的)</p>
+<p>Client调用FSDataInputStream.close()方法，关闭输入流。<br>
+<img src="https://raw.githubusercontent.com/Treeundersun/Treeundersun.github.io/master/article/hdfs%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99%E6%B5%81%E7%A8%8B/pic1.png" alt=""></p>
+
                 
 
                 <hr>
                 <!-- Pager -->
                 <ul class="pager">
                     
+                        <li class="previous">
+                            <a href="/article/Linux的oom-kill和clean机制/" data-toggle="tooltip" data-placement="top" title="Linux的OOM-Kill/Clean机制">&larr; Previous Post</a>
+                        </li>
+                    
                     
                         <li class="next">
-                            <a href="/article/phoenix版本/" data-toggle="tooltip" data-placement="top" title="Phoenix5.0.0-HBase2.0.0对接CDH-HBase2.0.0失败">Next Post &rarr;</a>
+                            <a href="/article/hadoop为用户赋权限/" data-toggle="tooltip" data-placement="top" title="linux用户添加hdfs权限">Next Post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -263,6 +294,18 @@
             <!-- Tabe of Content -->
             <!-- Table of Contents -->
 
+  
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#hdfs文件读写流程"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">hdfs&#x6587;&#x4EF6;&#x8BFB;&#x5199;&#x6D41;&#x7A0B;</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#文件写流程"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">&#x6587;&#x4EF6;&#x5199;&#x6D41;&#x7A0B;</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#文件读流程"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">&#x6587;&#x4EF6;&#x8BFB;&#x6D41;&#x7A0B;</span></a></li></ol></li></ol>
+        
+        </div>
+      </aside>
+    
+
                 
             <!-- Sidebar Container -->
             <div class="
@@ -277,6 +320,8 @@
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
                        
+                          <a class="tag" href="/tags/#hadoop" title="hadoop">hadoop</a>
+                        
                     </div>
                 </section>
                 

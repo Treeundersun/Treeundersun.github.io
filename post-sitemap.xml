@@ -7,16 +7,24 @@
     </url>
 
     <url>
-        <loc>http://www.ruozedata.com/article/hdfs%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99%E6%B5%81%E7%A8%8B/</loc>
-        <lastmod>2020-06-11T16:07:53.515Z</lastmod>
+        <loc>http://www.ruozedata.com/article/%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%88%A0%E9%99%A4zookeeper%E7%9A%84meta%E6%95%B0%E6%8D%AE%E9%87%8D%E5%90%AF%E9%81%87%E5%9D%91/</loc>
+        <lastmod>2020-06-11T16:15:41.479Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>http://www.ruozedata.com/article/%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%88%A0%E9%99%A4zookeeper%E7%9A%84meta%E6%95%B0%E6%8D%AE%E9%87%8D%E5%90%AF%E9%81%87%E5%9D%91/</loc>
-        <lastmod>2020-06-11T16:05:38.507Z</lastmod>
+        <loc>http://www.ruozedata.com/article/linux01/</loc>
+        <lastmod>2020-06-11T16:14:24.475Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://www.ruozedata.com/article/hdfs%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99%E6%B5%81%E7%A8%8B/</loc>
+        <lastmod>2020-06-11T16:13:17.220Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -49,14 +57,6 @@
     <url>
         <loc>http://www.ruozedata.com/article/phoenix%E7%89%88%E6%9C%AC/</loc>
         <lastmod>2020-06-11T16:03:42.576Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://www.ruozedata.com/article/linux01/</loc>
-        <lastmod>2020-06-11T16:03:15.303Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

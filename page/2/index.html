@@ -211,41 +211,6 @@
 
 <div class="post-preview">
 
-    <a href="/article/spark编译遇坑/">
-        <h2 class="post-title">
-                                 
-            spark2.4.5编译遇坑
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            spark2.4.5编译遇坑
-
-[WARNING] Zinc server is not available at port 3030
-[ERROR] Failed to execute goal net.alchim31.maven:scala-maven-plugin:3.2.2:compile
-
-
-问题可能是这个 [INFO] Using incremental compilation......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 果茶 on
-            2019-06-05
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#spark" title="spark">spark</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
     <a href="/article/Linux的oom-kill和clean机制/">
         <h2 class="post-title">
                                  
@@ -270,6 +235,39 @@ oom-killer机制: 大数据相关进程是非常消耗内存的，在Linux内核
         <div class="tags">
             
               <a href="/tags/#linux" title="linux">linux</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/article/hdfs文件读写流程/">
+        <h2 class="post-title">
+                                 
+            hdfs文件读写流程
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            hdfs文件读写流程
+HDFS 文件读写流程
+两个核心对象：FSDataOutputStream、FSDataInputStream
+文件写流程
+1 Client调用FileSystem.create(filePath)方法，与NN进行【rpc】通信，check是否存在及是否有权限创建；假如不ok，就返回错误信息；假如ok，就创建一个新文件，不关联任何的block块，返回一个FSDataOu......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 果茶 on
+            2019-03-12
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#hadoop" title="hadoop">hadoop</a>
             
         </div>
     
@@ -388,11 +386,7 @@ Linux下默认是没有supergroup组的
     <div class="tags">
         
             
-            <a href="/tags/#linux" title="linux" rel="1">linux</a>
-            
-        
-            
-            <a href="/tags/#flume" title="flume" rel="2">flume</a>
+            <a href="/tags/#linux" title="linux" rel="2">linux</a>
             
         
             
@@ -400,11 +394,11 @@ Linux下默认是没有supergroup组的
             
         
             
-            <a href="/tags/#hadoop" title="hadoop" rel="2">hadoop</a>
+            <a href="/tags/#flume" title="flume" rel="2">flume</a>
             
         
             
-            <a href="/tags/#ruozedata" title="ruozedata" rel="1">ruozedata</a>
+            <a href="/tags/#hadoop" title="hadoop" rel="3">hadoop</a>
             
         
             
@@ -488,10 +482,6 @@ Linux下默认是没有supergroup组的
     <ul>
       
         <li>
-          <a href="/article/hdfs文件读写流程/">(no title)</a>
-        </li>
-      
-        <li>
           <a href="/article/phoenix版本/">Phoenix5.0.0-HBase2.0.0对接CDH-HBase2.0.0失败</a>
         </li>
       
@@ -505,6 +495,10 @@ Linux下默认是没有supergroup组的
       
         <li>
           <a href="/article/flink编译遇坑/">flink 1.10编译部署遇坑</a>
+        </li>
+      
+        <li>
+          <a href="/article/flume启停脚本/">flume启停脚本</a>
         </li>
       
     </ul>
@@ -527,7 +521,7 @@ Linux下默认是没有supergroup组的
         
     <h5>ARCHIVES</h5>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">2</span></li></ul>
     </div>
 
         <hr>
