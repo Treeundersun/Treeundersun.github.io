@@ -211,49 +211,6 @@
 
 <div class="post-preview">
 
-    <a href="/article/thanks/">
-        <h2 class="post-title">
-            
-                <i class="fa fa-thumb-tack" style="color:#F4711F" ></i>
-                <!-- <i class="fa fa-thumb-tack" style="color:#F89E8C" ></i> -->
-                <!-- <i class="fa fa-thumb-tack" style="color:#1CB7ED" ></i> -->
-                <font color=#F4711F>置顶</font>
-                <!-- <font color=#F89E8C>置顶</font>  -->
-                <!-- <font color=#1CB7ED>置顶</font>  -->
-                                 
-            感谢一路以来帮助过我的人们
-        </h2>
-        <h3 class="post-subtitle">
-            This is hexo theme Demo.
-        </h3>
-        <div class="post-content-preview">
-            
-
-平凡之路
-我曾经毁了我的一切 只想永远地离开
-我曾经堕入无边黑暗 想挣扎无法自拔
-感谢一路相伴有你们,人生才有了更多的快乐
-
-...
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 果茶 on
-            2018-08-05
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#随笔" title="随笔">随笔</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
     <a href="/article/flume负载均衡和故障转移/">
         <h2 class="post-title">
                                  
@@ -272,111 +229,6 @@
             2020-06-11
         </p>
         <div class="tags">
-            
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/article/常用名词/">
-        <h2 class="post-title">
-                                 
-            常用名词解释(不断更新)
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            收录了一些名词及英文缩写的解释
-QPS: query per second
-
-每秒请求次数:业务数据量指标
-
-DDL &amp; DML &amp; DCL &amp; TCL
-DDL（Data Definition Language）数据库定义语言statements are used to define the database structure or schema.
-
-DDL是SQL......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 果茶 on
-            2019-02-04
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#常用名词" title="常用名词">常用名词</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/article/记一次删除zookeeper的meta数据重启遇坑/">
-        <h2 class="post-title">
-                                 
-            记一次删除zookeeper的meta数据重启遇坑
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            当时CDH的zookeeper数据出现问题,需要删除重新生成,遇坑
-123456cd /etc/zookeeper/conf/cat zoo.cfg     dataDir=/var/lib/zookeeper    cd /var/lib/zookeeper  rm -rf *
-重启
-错误一:Unable to create data directory and start Zookeep......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 果茶 on
-            2019-02-04
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#CDH" title="CDH">CDH</a>
-            
-              <a href="/tags/#zookeeper" title="zookeeper">zookeeper</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/article/linux01/">
-        <h2 class="post-title">
-                                 
-            Linux命令(不断补充)
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            追加内容到文件
-1echo &quot;  &quot;  &gt;&gt;  /xx/xx
-用户组/用户/文件权限
-123chgrp 改变所属组chown 改变所属用户chmod 改变文件权限
-vi命令相关
-12345vi   &amp;    i   &amp;    wq   &amp;    wq!   &amp;    shift+z+z    a:光标移到下一位    g:光标移......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 果茶 on
-            2018-08-10
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#ruozedata" title="ruozedata">ruozedata</a>
             
         </div>
     
@@ -557,6 +409,145 @@ flume-xx.sh start/stop/restart
 </div>
 <hr>
 
+<div class="post-preview">
+
+    <a href="/article/hadoop为用户赋权限/">
+        <h2 class="post-title">
+                                 
+            linux用户添加hdfs权限
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            给root或其他 xxx user 赋hdfs权限
+通常会把 root 或者需要的用户添加到 supergroup组，但Linux下默认是没有supergroup组。
+Linux下默认是没有supergroup组的
+# hadoop:x:994:hdfs,mapred,yarn
+1cat /etc/group
+查看hdfs用户的组是hadoop
+# hdfs:x:995:992:Hadoop......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 果茶 on
+            2019-03-03
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#hadoop" title="hadoop">hadoop</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/article/常用名词/">
+        <h2 class="post-title">
+                                 
+            常用名词解释(不断更新)
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            收录了一些名词及英文缩写的解释
+QPS: query per second
+
+每秒请求次数:业务数据量指标
+
+DDL &amp; DML &amp; DCL &amp; TCL
+DDL（Data Definition Language）数据库定义语言statements are used to define the database structure or schema.
+
+DDL是SQL......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 果茶 on
+            2019-02-04
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#常用名词" title="常用名词">常用名词</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/article/记一次删除zookeeper的meta数据重启遇坑/">
+        <h2 class="post-title">
+                                 
+            记一次删除zookeeper的meta数据重启遇坑
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            当时CDH的zookeeper数据出现问题,需要删除重新生成,遇坑
+123456cd /etc/zookeeper/conf/cat zoo.cfg     dataDir=/var/lib/zookeeper    cd /var/lib/zookeeper  rm -rf *
+重启
+错误一:Unable to create data directory and start Zookeep......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 果茶 on
+            2019-02-04
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#CDH" title="CDH">CDH</a>
+            
+              <a href="/tags/#zookeeper" title="zookeeper">zookeeper</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/article/hadoop基准测试/">
+        <h2 class="post-title">
+                                 
+            hadoop基准测试
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            基准测试
+有哪些测试方式：
+1hadoop  jar /opt/cloudera/parcels/CDH-5.3.6-1.cdh5.3.6.p0.11/jars/hadoop-mapreduce-client-jobclient-2.5.0-cdh5.3.6-tests.jar
+测试hadoop写的速度
+向HDFS文件系统中写入数据,30个文件,每个文件100MB,文件存放到/benchma......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 果茶 on
+            2019-01-06
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#hadoop" title="hadoop">hadoop</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
 
 
 <!-- Pager -->
@@ -565,7 +556,7 @@ flume-xx.sh start/stop/restart
     
     
         <li class="next">
-            <a href="/page/2/">Older Posts &rarr;</a>
+            <a href="/archives/2/">Older Posts &rarr;</a>
         </li>
     
 </ul>
