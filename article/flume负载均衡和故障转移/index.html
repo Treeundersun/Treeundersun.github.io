@@ -14,7 +14,7 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <title>
         
-          果茶 | Blog
+          flume负载均衡和故障转移 - 果茶 | Blog
         
     </title>
 
@@ -71,7 +71,7 @@
 <style type="text/css">
     header.intro-header{
         
-            background-image: url('/img/article_header/article_bg.jpg')
+            background-image: url('/img/article_header/article_header.png')
             /*post*/
         
     }
@@ -88,12 +88,14 @@
                     <div class="post-heading">
                         <div class="tags">
                             
+                              <a class="tag" href="/tags/#flume" title="flume">flume</a>
+                            
                         </div>
-                        <h1></h1>
+                        <h1>flume负载均衡和故障转移</h1>
                         <h2 class="subheading"></h2>
                         <span class="meta">
                             Posted by 果茶 on
-                            2020-06-11
+                            2019-11-12
                         </span>
                     </div>
                 
@@ -147,14 +149,14 @@
 
                         
                         <li>
-                            <a href="/archive/">Archives</a>
+                            <a href="/tags/">Tags</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/tags/">Tags</a>
+                            <a href="/archive/">Archives</a>
                         </li>
                         
                     
@@ -210,16 +212,44 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                
+                <h2 id="flume集群模式下的两种情形">flume集群模式下的两种情形:</h2>
+<p>一个channel后有多个sink,需要均衡发送source到各个sink<br>
+一个channel后的sink可能挂掉,需要有备胎sink待命</p>
+<hr>
+<h4 id="场景一load-balancing-sink-processor负载均衡sink处理器">场景一:Load balancing Sink Processor:负载均衡sink处理器</h4>
+<blockquote>
+<p>(根据算法分配发到哪个sink)<br>
+type选load_balance<br>
+backoff若为true,失败的接收器入黑名单<br>
+selector有 round_robin(轮循:默认),random(随机)</p>
+</blockquote>
+<p>参数:</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ex</span>.</span><br><span class="line">   a1.sinkgroups  =  g1 </span><br><span class="line">   a1.sinkgroups.g1.sinks  =  k1 k2 </span><br><span class="line">   a1.sinkgroups.g1.processor.<span class="built_in">type</span>  =  load_balance </span><br><span class="line">   a1.sinkgroups.g1.processor.backoff  =  true </span><br><span class="line">   a1.sinkgroups.g1.processor.selector  =  random</span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/Treeundersun/Treeundersun.github.io/master/article/flume%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E5%92%8C%E6%95%85%E9%9A%9C%E8%BD%AC%E7%A7%BB/pic1.png" alt="负载均衡"></p>
+<p><img src="https://raw.githubusercontent.com/Treeundersun/Treeundersun.github.io/master/article/flume%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E5%92%8C%E6%95%85%E9%9A%9C%E8%BD%AC%E7%A7%BB/pic2.png" alt="相关参数"></p>
+<h4 id="场景二failover-sink-processor故障转移sink处理器">场景二:Failover Sink Processor:故障转移sink处理器</h4>
+<blockquote>
+<p>(根据优先级设定,先只使用等级高的,高等级挂掉,就启用低等级)<br>
+(数字越大等级越高)</p>
+</blockquote>
+<p>参数:</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ex</span>.</span><br><span class="line">a1.sinkgroups = g1</span><br><span class="line">a1.sinkgroups.g1.sinks = k1 k2</span><br><span class="line">a1.sinkgroups.g1.processor.<span class="built_in">type</span> = failover</span><br><span class="line">a1.sinkgroups.g1.processor.priority.k1 = <span class="number">5</span></span><br><span class="line">a1.sinkgroups.g1.processor.priority.k2 = <span class="number">10</span></span><br><span class="line">a1.sinkgroups.g1.processor.maxpenalty = <span class="number">10000</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/Treeundersun/Treeundersun.github.io/master/article/flume%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E5%92%8C%E6%95%85%E9%9A%9C%E8%BD%AC%E7%A7%BB/pic3.png" alt="故障转移"><br>
+<img src="https://raw.githubusercontent.com/Treeundersun/Treeundersun.github.io/master/article/flume%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E5%92%8C%E6%95%85%E9%9A%9C%E8%BD%AC%E7%A7%BB/pic4.png" alt="相关参数"></p>
+
                 
 
                 <hr>
                 <!-- Pager -->
                 <ul class="pager">
                     
+                        <li class="previous">
+                            <a href="/article/phoenix常用/" data-toggle="tooltip" data-placement="top" title="Phoenix常用">&larr; Previous Post</a>
+                        </li>
+                    
                     
                         <li class="next">
-                            <a href="/article/phoenix版本/" data-toggle="tooltip" data-placement="top" title="Phoenix5.0.0-HBase2.0.0对接CDH-HBase2.0.0失败">Next Post &rarr;</a>
+                            <a href="/article/flink编译遇坑/" data-toggle="tooltip" data-placement="top" title="flink 1.10编译部署遇坑">Next Post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -263,6 +293,18 @@
             <!-- Tabe of Content -->
             <!-- Table of Contents -->
 
+  
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#flume集群模式下的两种情形"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">flume&#x96C6;&#x7FA4;&#x6A21;&#x5F0F;&#x4E0B;&#x7684;&#x4E24;&#x79CD;&#x60C5;&#x5F62;:</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#场景一load-balancing-sink-processor负载均衡sink处理器"><span class="toc-nav-number">1.0.1.</span> <span class="toc-nav-text">&#x573A;&#x666F;&#x4E00;:Load balancing Sink Processor:&#x8D1F;&#x8F7D;&#x5747;&#x8861;sink&#x5904;&#x7406;&#x5668;</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#场景二failover-sink-processor故障转移sink处理器"><span class="toc-nav-number">1.0.2.</span> <span class="toc-nav-text">&#x573A;&#x666F;&#x4E8C;:Failover Sink Processor:&#x6545;&#x969C;&#x8F6C;&#x79FB;sink&#x5904;&#x7406;&#x5668;</span></a></li></ol></li></ol></li></ol>
+        
+        </div>
+      </aside>
+    
+
                 
             <!-- Sidebar Container -->
             <div class="
@@ -277,6 +319,8 @@
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
                        
+                          <a class="tag" href="/tags/#flume" title="flume">flume</a>
+                        
                     </div>
                 </section>
                 

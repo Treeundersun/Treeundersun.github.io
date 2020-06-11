@@ -14,11 +14,11 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <title>
         
-          果茶 | Blog
+          Linux的OOM-Kill/Clean机制 - 果茶 | Blog
         
     </title>
 
-    <link rel="canonical" href="http://www.ruozedata.com/archives/2/">
+    <link rel="canonical" href="http://www.ruozedata.com/article/Linux的oom-kill和clean机制/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -71,8 +71,8 @@
 <style type="text/css">
     header.intro-header{
         
-            background-image: url('/img/header_img/city.jpg') 
-            /*config*/
+            background-image: url('/img/article_header/article_header.png')
+            /*post*/
         
     }
     
@@ -85,10 +85,18 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 
-                    <div class="site-heading">
-                        <h1>果茶@Blog</h1>
-                        <!--<hr class="small">-->
-                        <span class="subheading"></span>
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                              <a class="tag" href="/tags/#linux" title="linux">linux</a>
+                            
+                        </div>
+                        <h1>Linux的OOM-Kill/Clean机制</h1>
+                        <h2 class="subheading"></h2>
+                        <span class="meta">
+                            Posted by 果茶 on
+                            2019-05-22
+                        </span>
                     </div>
                 
 
@@ -141,14 +149,14 @@
 
                         
                         <li>
-                            <a href="/archive/">Archives</a>
+                            <a href="/tags/">Tags</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/tags/">Tags</a>
+                            <a href="/archive/">Archives</a>
                         </li>
                         
                     
@@ -191,287 +199,195 @@
 
 
     <!-- Main Content -->
-    <!-- Main Content -->
-<div class="container">
-    <div class="row">
-        
+    <!-- Modify by Yu-Hsuan Yen -->
 
-<!-- USE SIDEBAR -->
-    <!-- Post Container -->
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
             <div class="
-                col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                post-container
-            ">
-            
-                <!-- Main Content -->
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
 
+                <h2 id="linux的oom-killclean机制">Linux的OOM-Kill/Clean机制</h2>
+<p><strong>oom-killer</strong>机制: 大数据相关进程是非常消耗内存的，在Linux内核检测到系统内存不足后，会触发oom-kill，挑选占用最大内存的进程杀掉。<br>
+如果我们的进程突然断了，首先查看日志找EROOR，有ERROR具体分析产生的原因，没有ERROR但是INFO信息中断，很可能就是触发了oom-killer机制。<br>
+解决方案：<br>
+使用free -h命令查看内存使用情况，<br>
+再使用cat /var/log/messages | grep oom命令查看有没有类似于Killed process 的命令，如果有，就是触发了oom-killer机制</p>
+<p><strong>clean机制</strong>: Linux的/tmp目录是一个临时目录，它有一个机制，默认清理超过30天的内容，而前面使用jps命令的时候就发现，hadoop的进程pid都存放在/tmp目录中，<br>
+启动进程的时候去/tmp目录下创建对应的pid文件，结束进程的时候去/tmp目录下找到程序对应的pid用来结束进程并删除pid文件。<br>
+那么如果我们的hadoop组件进程启动时间超过了30天了呢？pid文件被清理，结束命令找不到pid号，会再重新创建一个pid，结果就是pid号紊乱，进程无法正常结束。</p>
+<p>解决方案：<br>
+在家目录下面创建一个tmp目录，然后把hdfs和yarn的pid号管理文件夹设置成家目录下的tmp目录即可。</p>
+<p>注意：更改pid文件所在的目录时候，需要先停止HDFS，修改完成后再重启HDFS生效，否则容易出现问题。</p>
 
-<div class="post-preview">
+                
 
-    <a href="/article/linux01/">
-        <h2 class="post-title">
-                                 
-            Linux命令(不断补充)
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            追加内容到文件
-1echo &quot;  &quot;  &gt;&gt;  /xx/xx
-用户组/用户/文件权限
-123chgrp 改变所属组chown 改变所属用户chmod 改变文件权限
-vi命令相关
-12345vi   &amp;    i   &amp;    wq   &amp;    wq!   &amp;    shift+z+z    a:光标移到下一位    g:光标移......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 果茶 on
-            2018-08-10
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#ruozedata" title="ruozedata">ruozedata</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/article/thanks/">
-        <h2 class="post-title">
-            
-                <i class="fa fa-thumb-tack" style="color:#F4711F" ></i>
-                <!-- <i class="fa fa-thumb-tack" style="color:#F89E8C" ></i> -->
-                <!-- <i class="fa fa-thumb-tack" style="color:#1CB7ED" ></i> -->
-                <font color=#F4711F>置顶</font>
-                <!-- <font color=#F89E8C>置顶</font>  -->
-                <!-- <font color=#1CB7ED>置顶</font>  -->
-                                 
-            感谢一路以来帮助过我的人们
-        </h2>
-        <h3 class="post-subtitle">
-            This is hexo theme Demo.
-        </h3>
-        <div class="post-content-preview">
-            
-
-平凡之路
-我曾经毁了我的一切 只想永远地离开
-我曾经堕入无边黑暗 想挣扎无法自拔
-感谢一路相伴有你们,人生才有了更多的快乐
-
-...
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 果茶 on
-            2018-08-05
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#随笔" title="随笔">随笔</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-
-
-<!-- Pager -->
-
-<ul class="pager">
-    
-        <li class="previous">
-            <a href="/">&larr; Newer Posts</a>
-        </li>
-    
-    
-</ul>
-
-
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/article/spark编译遇坑/" data-toggle="tooltip" data-placement="top" title="spark2.4.5编译遇坑">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/article/hadoop为用户赋权限/" data-toggle="tooltip" data-placement="top" title="linux用户添加hdfs权限">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
 
                 <br>
 
+                <!--打赏-->
+                
+                <!--打赏-->
+
+                <br>
+                <!--分享-->
+                
+                    <div class="social-share"  data-wechat-qrcode-helper="" align="center"></div>
+                    <!--  css & js -->
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+                
+                <!--分享-->
+                <br>                       
+                
                 <!-- require APlayer -->
                 
 
-                <!-- 如果开启评论功能 -->
+                <!-- duoshuo Share start -->
+                
+                <!-- 多说 Share end-->
+
+                <!-- 多说评论框 start -->
+                
+                <!-- 多说评论框 end -->
+
+                <!-- disqus comment start -->
+                
+                <!-- disqus comment end -->
+
+                
+
+            </div>
+            
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+  
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#linux的oom-killclean机制"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Linux&#x7684;OOM-Kill/Clean&#x673A;&#x5236;</span></a></li></ol>
+        
+        </div>
+      </aside>
+    
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#linux" title="linux">linux</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a href="http://www.bilibili.com" target="_blank">哔哩哔哩官网</a></li>
+                    
+                </ul>
                 
             </div>
-
-          <!-- Sidebar Container -->
-<div class="
-    col-lg-3 col-lg-offset-0
-    col-md-3 col-md-offset-0
-    col-sm-12
-    col-xs-12
-    sidebar-container
-">
-    
-        <!-- Featured Tags -->
-
-<section>
-    <!-- no hr -->
-    <h5><a href="/tags/">FEATURED TAGS</a></h5>
-    <div class="tags">
-        
-            
-            <a href="/tags/#flink" title="flink" rel="1">flink</a>
-            
-        
-            
-            <a href="/tags/#flume" title="flume" rel="1">flume</a>
-            
-        
-            
-            <a href="/tags/#hadoop" title="hadoop" rel="2">hadoop</a>
-            
-        
-            
-            <a href="/tags/#ruozedata" title="ruozedata" rel="1">ruozedata</a>
-            
-        
-            
-            <a href="/tags/#phoenix" title="phoenix" rel="2">phoenix</a>
-            
-        
-            
-            <a href="/tags/#hbase" title="hbase" rel="1">hbase</a>
-            
-        
-            
-            <a href="/tags/#spark" title="spark" rel="1">spark</a>
-            
-        
-            
-            <a href="/tags/#随笔" title="随笔" rel="1">随笔</a>
-            
-        
-            
-            <a href="/tags/#常用名词" title="常用名词" rel="1">常用名词</a>
-            
-        
-            
-            <a href="/tags/#CDH" title="CDH" rel="1">CDH</a>
-            
-        
-            
-            <a href="/tags/#zookeeper" title="zookeeper" rel="1">zookeeper</a>
-            
-        
+        </div>
     </div>
-</section>
+</article>
 
-        <hr>
-    
-        <!-- Short About -->
-<section class="visible-md visible-lg">
-    <h5><a href="/about/">ABOUT ME</a></h5>
-    <div class="short-about">
 
-        
-            <img id = "avatar_pic" src="/img/avatar/cat2.jpg" />
-        
 
-        
-            <p>一口好茶,一抹清香</p>
-        
 
-        <!-- SNS Link -->
-        <ul class="list-inline">
-            
-            
-            
 
-            
 
-            
 
-            
-                <li>
-                    <a target="_blank"  href="https://github.com/Treeundersun">
-                        <span class="fa-stack fa-lg">
-                            <i class="fa fa-circle fa-stack-2x"></i>
-                            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                        </span>
-                    </a>
-                </li>
-            
-            
-            
-            
-        </ul>
-    </div>
-</section>
 
-        <hr>
-    
-        
-  <h5>RECENT POSTS</h3>
-  <div class="widget">
-    <ul>
-      
-        <li>
-          <a href="/article/flume负载均衡和故障转移/">(no title)</a>
-        </li>
-      
-        <li>
-          <a href="/article/phoenix版本/">Phoenix5.0.0-HBase2.0.0对接CDH-HBase2.0.0失败</a>
-        </li>
-      
-        <li>
-          <a href="/article/phoenix常用/">Phoenix常用</a>
-        </li>
-      
-        <li>
-          <a href="/article/flink编译遇坑/">flink 1.10编译部署遇坑</a>
-        </li>
-      
-        <li>
-          <a href="/article/flume启停脚本/">flume启停脚本</a>
-        </li>
-      
-    </ul>
-  </div>
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: 'rz'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
 
-        <hr>
-    
-        <!-- Friends Blog -->
 
-<h5>FRIENDS</h5>
-<ul class="list-inline">
-
-    
-        <li><a href="http://www.bilibili.com" target="_blank">哔哩哔哩官网</a></li>
-    
-</ul>
-
-        <hr>
-    
-        
-    <h5>ARCHIVES</h5>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">2</span></li></ul>
-    </div>
-
-        <hr>
-    
-</div>
-
-        
-    </div>
-</div>
+<!-- chrome Firefox 中文锚点定位失效-->
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+<!-- smooth scroll behavior polyfill  -->
+<script type="text/javascript" src="/js/smoothscroll.js"></script>
+<script>
+        $('#toc').on('click','a',function(a){
+            // var isChrome = window.navigator.userAgent.indexOf("Chrome") !== -1;
+            // console.log(window.navigator.userAgent,isChrome)
+                // if(isChrome) {
+                    // console.log(a.currentTarget.outerHTML);
+                    // console.log($(a.currentTarget).attr("href"));
+                    //跳转到指定锚点
+                    // document.getElementById(a.target.innerText.toLowerCase()).scrollIntoView(true);
+                    document.getElementById($(a.currentTarget).attr("href").replace("#","")).scrollIntoView({behavior: 'smooth' });
+                // }
+        })  
+</script>
 
 
     <!-- Footer -->

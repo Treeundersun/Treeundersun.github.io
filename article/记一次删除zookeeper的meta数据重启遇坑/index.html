@@ -151,14 +151,14 @@
 
                         
                         <li>
-                            <a href="/archive/">Archives</a>
+                            <a href="/tags/">Tags</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/tags/">Tags</a>
+                            <a href="/archive/">Archives</a>
                         </li>
                         
                     
@@ -214,7 +214,7 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <p>当时CDH的zookeeper数据出现问题,需要删除重新生成,遇坑</p>
+                <h2 id="当时cdh的zookeeper数据出现问题需要删除重新生成遇坑">当时CDH的zookeeper数据出现问题,需要删除重新生成,遇坑</h2>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /etc/zookeeper/conf/</span><br><span class="line">cat zoo.cfg </span><br><span class="line">    dataDir=/var/lib/zookeeper</span><br><span class="line">    </span><br><span class="line"><span class="built_in">cd</span> /var/lib/zookeeper  </span><br><span class="line">rm -rf *</span><br></pre></td></tr></table></figure>
 <p>重启<br>
 错误一:Unable to create data directory and start Zookeeper<br>
@@ -286,7 +286,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="nav">none</ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#当时cdh的zookeeper数据出现问题需要删除重新生成遇坑"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">&#x5F53;&#x65F6;CDH&#x7684;zookeeper&#x6570;&#x636E;&#x51FA;&#x73B0;&#x95EE;&#x9898;,&#x9700;&#x8981;&#x5220;&#x9664;&#x91CD;&#x65B0;&#x751F;&#x6210;,&#x9047;&#x5751;</span></a></li></ol>
         
         </div>
       </aside>

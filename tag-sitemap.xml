@@ -9,71 +9,78 @@
     </url>
 
     <url>
-        <loc>http://www.ruozedata.com/tags/flume/</loc>
-        <lastmod>2020-06-11T09:29:19.910Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://www.ruozedata.com/tags/hadoop/</loc>
-        <lastmod>2020-06-11T09:29:41.003Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://www.ruozedata.com/tags/ruozedata/</loc>
-        <lastmod>2020-06-11T09:29:47.498Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://www.ruozedata.com/tags/hbase/</loc>
-        <lastmod>2020-06-11T09:29:55.979Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://www.ruozedata.com/tags/phoenix/</loc>
-        <lastmod>2020-06-11T09:30:07.100Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://www.ruozedata.com/tags/%E5%B8%B8%E7%94%A8%E5%90%8D%E8%AF%8D/</loc>
-        <lastmod>2020-06-11T09:30:17.135Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://www.ruozedata.com/tags/CDH/</loc>
-        <lastmod>2020-06-11T09:30:22.914Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://www.ruozedata.com/tags/zookeeper/</loc>
-        <lastmod>2020-06-11T09:30:22.914Z</lastmod>
+        <loc>http://www.ruozedata.com/tags/linux/</loc>
+        <lastmod>2020-06-11T16:00:39.351Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://www.ruozedata.com/tags/flink/</loc>
-        <lastmod>2020-06-11T09:34:55.586Z</lastmod>
+        <lastmod>2020-06-11T16:02:08.745Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.ruozedata.com/tags/flume/</loc>
+        <lastmod>2020-06-11T16:02:26.178Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.ruozedata.com/tags/hadoop/</loc>
+        <lastmod>2020-06-11T16:02:50.536Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.ruozedata.com/tags/ruozedata/</loc>
+        <lastmod>2020-06-11T16:03:15.303Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.ruozedata.com/tags/hbase/</loc>
+        <lastmod>2020-06-11T16:03:42.576Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.ruozedata.com/tags/phoenix/</loc>
+        <lastmod>2020-06-11T16:03:57.460Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://www.ruozedata.com/tags/spark/</loc>
-        <lastmod>2020-06-11T09:42:38.077Z</lastmod>
+        <lastmod>2020-06-11T16:04:17.412Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.ruozedata.com/tags/%E5%B8%B8%E7%94%A8%E5%90%8D%E8%AF%8D/</loc>
+        <lastmod>2020-06-11T16:05:26.616Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.ruozedata.com/tags/CDH/</loc>
+        <lastmod>2020-06-11T16:05:38.507Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.ruozedata.com/tags/zookeeper/</loc>
+        <lastmod>2020-06-11T16:05:38.507Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

@@ -141,14 +141,14 @@
 
                         
                         <li>
-                            <a href="/archive/">Archives</a>
+                            <a href="/tags/">Tags</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/tags/">Tags</a>
+                            <a href="/archive/">Archives</a>
                         </li>
                         
                     
@@ -211,7 +211,50 @@
 
 <div class="post-preview">
 
-    <a href="/article/flume负载均衡和故障转移/">
+    <a href="/article/thanks/">
+        <h2 class="post-title">
+            
+                <i class="fa fa-thumb-tack" style="color:#F4711F" ></i>
+                <!-- <i class="fa fa-thumb-tack" style="color:#F89E8C" ></i> -->
+                <!-- <i class="fa fa-thumb-tack" style="color:#1CB7ED" ></i> -->
+                <font color=#F4711F>置顶</font>
+                <!-- <font color=#F89E8C>置顶</font>  -->
+                <!-- <font color=#1CB7ED>置顶</font>  -->
+                                 
+            感谢一路以来帮助过我的人们
+        </h2>
+        <h3 class="post-subtitle">
+            This is hexo theme Demo.
+        </h3>
+        <div class="post-content-preview">
+            
+
+平凡之路
+我曾经毁了我的一切 只想永远地离开
+我曾经堕入无边黑暗 想挣扎无法自拔
+感谢一路相伴有你们,人生才有了更多的快乐
+
+...
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 果茶 on
+            2018-08-05
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#随笔" title="随笔">随笔</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/article/hdfs文件读写流程/">
         <h2 class="post-title">
                                  
             Untitled
@@ -226,217 +269,9 @@
     
         <p class="post-meta" style="margin: 10px 0;">
             Posted by 果茶 on
-            2020-06-11
+            2020-06-12
         </p>
         <div class="tags">
-            
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/article/phoenix版本/">
-        <h2 class="post-title">
-                                 
-            Phoenix5.0.0-HBase2.0.0对接CDH-HBase2.0.0失败
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            调研phoenix时发现版本问题
-官网安装配置了Phoenix5.0.0-HBase2.0.0以对接CDH中的2.0.0HBase
-在测试时,建立二级索引插入数据时报错:
-123456Error: org.apache.hadoop.hbase.client.RetriesExhaustedWithDetailsException:Failed 1 action: org.apache.ph......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 果茶 on
-            2020-01-10
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#phoenix" title="phoenix">phoenix</a>
-            
-              <a href="/tags/#hbase" title="hbase">hbase</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/article/phoenix常用/">
-        <h2 class="post-title">
-                                 
-            Phoenix常用
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            普通sql语法
-
-和mysql相比,除insert和update合并为upsert外,基本一致
-
-删除命令
-123drop TABLE if EXISTS TOWER_INFO（表名）drop index  TOWER_IDX（索引名） ON TOWER_INFO（表名）；DROP SEQUENCE IF EXISTS test_sequence
-查看索引
-123select TABLE_N......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 果茶 on
-            2019-12-01
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#phoenix" title="phoenix">phoenix</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/article/flink编译遇坑/">
-        <h2 class="post-title">
-                                 
-            flink 1.10编译部署遇坑
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            调研flink,编译release部署到集群遇坑
-flink 的 release 包 源码编译
-1mvn clean install -DskipTests -Dscala-2.12 -Pvendor-repos -Pinclude-hadoop -Dhadoop.version=2.6.0-cdh5.16.2
-编译报错 1( 因为是cdh版的hadoop ):
-
-Failed to exe......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 果茶 on
-            2019-07-01
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#flink" title="flink">flink</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/article/flume启停脚本/">
-        <h2 class="post-title">
-                                 
-            flume启停脚本
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            flume启停脚本
-flume的启动停止个人感觉较繁琐,故写了针对单个业务的启停脚本
-(也可将配置从外面传入,本脚本将大多配置写在内部了)
-使用命令
-flume-xx.sh start/stop/restart
-1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 果茶 on
-            2019-06-05
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#flume" title="flume">flume</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/article/spark编译遇坑/">
-        <h2 class="post-title">
-                                 
-            spark2.4.5编译遇坑
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            
-[WARNING] Zinc server is not available at port 3030
-[ERROR] Failed to execute goal net.alchim31.maven:scala-maven-plugin:3.2.2:compile
-
-
-问题可能是这个 [INFO] Using incremental compilation
-在你的pom.xml中尝试删......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 果茶 on
-            2019-06-05
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#spark" title="spark">spark</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/article/hadoop为用户赋权限/">
-        <h2 class="post-title">
-                                 
-            linux用户添加hdfs权限
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            给root或其他 xxx user 赋hdfs权限
-通常会把 root 或者需要的用户添加到 supergroup组，但Linux下默认是没有supergroup组。
-Linux下默认是没有supergroup组的
-# hadoop:x:994:hdfs,mapred,yarn
-1cat /etc/group
-查看hdfs用户的组是hadoop
-# hdfs:x:995:992:Hadoop......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 果茶 on
-            2019-03-03
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#hadoop" title="hadoop">hadoop</a>
             
         </div>
     
@@ -456,6 +291,7 @@ Linux下默认是没有supergroup组的
         </h3>
         <div class="post-content-preview">
             收录了一些名词及英文缩写的解释
+
 QPS: query per second
 
 每秒请求次数:业务数据量指标
@@ -463,7 +299,7 @@ QPS: query per second
 DDL &amp; DML &amp; DCL &amp; TCL
 DDL（Data Definition Language）数据库定义语言statements are used to define the database structure or schema.
 
-DDL是SQL......
+DDL是SQ......
         </div>
     </a>
     
@@ -517,30 +353,212 @@ DDL是SQL......
 
 <div class="post-preview">
 
-    <a href="/article/hadoop基准测试/">
+    <a href="/article/linux01/">
         <h2 class="post-title">
                                  
-            hadoop基准测试
+            Linux命令(不断补充)
         </h2>
         <h3 class="post-subtitle">
             
         </h3>
         <div class="post-content-preview">
-            基准测试
-有哪些测试方式：
-1hadoop  jar /opt/cloudera/parcels/CDH-5.3.6-1.cdh5.3.6.p0.11/jars/hadoop-mapreduce-client-jobclient-2.5.0-cdh5.3.6-tests.jar
-测试hadoop写的速度
-向HDFS文件系统中写入数据,30个文件,每个文件100MB,文件存放到/benchma......
+            Linux命令(不断补充)
+追加内容到文件
+1echo &quot;  &quot;  &gt;&gt;  /xx/xx
+用户组/用户/文件权限
+123chgrp 改变所属组chown 改变所属用户chmod 改变文件权限
+vi命令相关
+12345vi   &amp;    i   &amp;    wq   &amp;    wq!   &amp;    shift+z+z    a:光标......
         </div>
     </a>
     
         <p class="post-meta" style="margin: 10px 0;">
             Posted by 果茶 on
-            2019-01-06
+            2018-08-10
         </p>
         <div class="tags">
             
-              <a href="/tags/#hadoop" title="hadoop">hadoop</a>
+              <a href="/tags/#ruozedata" title="ruozedata">ruozedata</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/article/phoenix版本/">
+        <h2 class="post-title">
+                                 
+            Phoenix5.0.0-HBase2.0.0对接CDH-HBase2.0.0失败
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            调研phoenix时发现版本问题
+
+官网安装配置了Phoenix5.0.0-HBase2.0.0以对接CDH中的2.0.0HBase
+在测试时,建立二级索引插入数据时报错:
+123456Error: org.apache.hadoop.hbase.client.RetriesExhaustedWithDetailsException:Failed 1 action: org.apache.p......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 果茶 on
+            2020-01-10
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#phoenix" title="phoenix">phoenix</a>
+            
+              <a href="/tags/#hbase" title="hbase">hbase</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/article/phoenix常用/">
+        <h2 class="post-title">
+                                 
+            Phoenix常用
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            Phoenix常用
+普通sql语法
+
+和mysql相比,除insert和update合并为upsert外,基本一致
+
+删除命令
+123drop TABLE if EXISTS TOWER_INFO（表名）drop index  TOWER_IDX（索引名） ON TOWER_INFO（表名）；DROP SEQUENCE IF EXISTS test_sequence
+查看索引
+123sele......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 果茶 on
+            2019-12-01
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#phoenix" title="phoenix">phoenix</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/article/flume负载均衡和故障转移/">
+        <h2 class="post-title">
+                                 
+            flume负载均衡和故障转移
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            flume集群模式下的两种情形:
+一个channel后有多个sink,需要均衡发送source到各个sink
+一个channel后的sink可能挂掉,需要有备胎sink待命
+
+场景一:Load balancing Sink Processor:负载均衡sink处理器
+
+(根据算法分配发到哪个sink)
+type选load_balance
+backoff若为true,失败的接收器入黑名单
+se......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 果茶 on
+            2019-11-12
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#flume" title="flume">flume</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/article/flink编译遇坑/">
+        <h2 class="post-title">
+                                 
+            flink 1.10编译部署遇坑
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            调研flink,编译release部署到集群遇坑
+
+flink 的 release 包 源码编译
+1mvn clean install -DskipTests -Dscala-2.12 -Pvendor-repos -Pinclude-hadoop -Dhadoop.version=2.6.0-cdh5.16.2
+编译报错 1( 因为是cdh版的hadoop ):
+
+Failed to ex......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 果茶 on
+            2019-07-01
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#flink" title="flink">flink</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/article/flume启停脚本/">
+        <h2 class="post-title">
+                                 
+            flume启停脚本
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            flume启停脚本
+flume的启动停止个人感觉较繁琐,故写了针对单个业务的启停脚本
+(也可将配置从外面传入,本脚本将大多配置写在内部了)
+
+使用命令
+flume-xx.sh start/stop/restart
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 果茶 on
+            2019-06-05
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#flume" title="flume">flume</a>
             
         </div>
     
@@ -556,7 +574,7 @@ DDL是SQL......
     
     
         <li class="next">
-            <a href="/archives/2/">Older Posts &rarr;</a>
+            <a href="/page/2/">Older Posts &rarr;</a>
         </li>
     
 </ul>
@@ -589,11 +607,15 @@ DDL是SQL......
     <div class="tags">
         
             
-            <a href="/tags/#flink" title="flink" rel="1">flink</a>
+            <a href="/tags/#linux" title="linux" rel="1">linux</a>
             
         
             
-            <a href="/tags/#flume" title="flume" rel="1">flume</a>
+            <a href="/tags/#flume" title="flume" rel="2">flume</a>
+            
+        
+            
+            <a href="/tags/#flink" title="flink" rel="1">flink</a>
             
         
             
@@ -685,7 +707,7 @@ DDL是SQL......
     <ul>
       
         <li>
-          <a href="/article/flume负载均衡和故障转移/">(no title)</a>
+          <a href="/article/hdfs文件读写流程/">(no title)</a>
         </li>
       
         <li>
@@ -697,11 +719,11 @@ DDL是SQL......
         </li>
       
         <li>
-          <a href="/article/flink编译遇坑/">flink 1.10编译部署遇坑</a>
+          <a href="/article/flume负载均衡和故障转移/">flume负载均衡和故障转移</a>
         </li>
       
         <li>
-          <a href="/article/flume启停脚本/">flume启停脚本</a>
+          <a href="/article/flink编译遇坑/">flink 1.10编译部署遇坑</a>
         </li>
       
     </ul>
@@ -724,7 +746,7 @@ DDL是SQL......
         
     <h5>ARCHIVES</h5>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">2</span></li></ul>
     </div>
 
         <hr>

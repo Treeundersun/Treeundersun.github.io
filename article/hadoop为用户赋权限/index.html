@@ -149,14 +149,14 @@
 
                         
                         <li>
-                            <a href="/archive/">Archives</a>
+                            <a href="/tags/">Tags</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/tags/">Tags</a>
+                            <a href="/archive/">Archives</a>
                         </li>
                         
                     
@@ -212,7 +212,8 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <h4 id="给root或其他-xxx-user-赋hdfs权限">给root或其他 xxx user 赋hdfs权限</h4>
+                <h2 id="linux用户添加hdfs权限">linux用户添加hdfs权限</h2>
+<h4 id="给root或其他-xxx-user-赋hdfs权限">给root或其他 xxx user 赋hdfs权限</h4>
 <p>通常会把 root 或者需要的用户添加到 supergroup组，但Linux下默认是没有supergroup组。</p>
 <h5 id="linux下默认是没有supergroup组的">Linux下默认是没有supergroup组的</h5>
 <p># hadoop:x:994:hdfs,mapred,yarn</p>
@@ -239,7 +240,7 @@
                 <ul class="pager">
                     
                         <li class="previous">
-                            <a href="/article/spark编译遇坑/" data-toggle="tooltip" data-placement="top" title="spark2.4.5编译遇坑">&larr; Previous Post</a>
+                            <a href="/article/Linux的oom-kill和clean机制/" data-toggle="tooltip" data-placement="top" title="Linux的OOM-Kill/Clean机制">&larr; Previous Post</a>
                         </li>
                     
                     
@@ -294,7 +295,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#给root或其他-xxx-user-赋hdfs权限"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">&#x7ED9;root&#x6216;&#x5176;&#x4ED6; xxx user &#x8D4B;hdfs&#x6743;&#x9650;</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#linux下默认是没有supergroup组的"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">Linux&#x4E0B;&#x9ED8;&#x8BA4;&#x662F;&#x6CA1;&#x6709;supergroup&#x7EC4;&#x7684;</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#查看hdfs用户的组是hadoop"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">&#x67E5;&#x770B;hdfs&#x7528;&#x6237;&#x7684;&#x7EC4;&#x662F;hadoop</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#linux添加supergroup组"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">Linux&#x6DFB;&#x52A0;supergroup&#x7EC4;</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#将root添加到supergroup"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">&#x5C06;root&#x6DFB;&#x52A0;&#x5230;supergroup</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#同步系统权限信息到hdfs会自动同步其他节点权限"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">&#x540C;&#x6B65;&#x7CFB;&#x7EDF;&#x6743;&#x9650;&#x4FE1;&#x606F;&#x5230;HDFS,&#x4F1A;&#x81EA;&#x52A8;&#x540C;&#x6B65;&#x5176;&#x4ED6;&#x8282;&#x70B9;&#x6743;&#x9650;</span></a></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#linux用户添加hdfs权限"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">linux&#x7528;&#x6237;&#x6DFB;&#x52A0;hdfs&#x6743;&#x9650;</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#给root或其他-xxx-user-赋hdfs权限"><span class="toc-nav-number">1.0.1.</span> <span class="toc-nav-text">&#x7ED9;root&#x6216;&#x5176;&#x4ED6; xxx user &#x8D4B;hdfs&#x6743;&#x9650;</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#linux下默认是没有supergroup组的"><span class="toc-nav-number">1.0.1.1.</span> <span class="toc-nav-text">Linux&#x4E0B;&#x9ED8;&#x8BA4;&#x662F;&#x6CA1;&#x6709;supergroup&#x7EC4;&#x7684;</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#查看hdfs用户的组是hadoop"><span class="toc-nav-number">1.0.1.2.</span> <span class="toc-nav-text">&#x67E5;&#x770B;hdfs&#x7528;&#x6237;&#x7684;&#x7EC4;&#x662F;hadoop</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#linux添加supergroup组"><span class="toc-nav-number">1.0.1.3.</span> <span class="toc-nav-text">Linux&#x6DFB;&#x52A0;supergroup&#x7EC4;</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#将root添加到supergroup"><span class="toc-nav-number">1.0.1.4.</span> <span class="toc-nav-text">&#x5C06;root&#x6DFB;&#x52A0;&#x5230;supergroup</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#同步系统权限信息到hdfs会自动同步其他节点权限"><span class="toc-nav-number">1.0.1.5.</span> <span class="toc-nav-text">&#x540C;&#x6B65;&#x7CFB;&#x7EDF;&#x6743;&#x9650;&#x4FE1;&#x606F;&#x5230;HDFS,&#x4F1A;&#x81EA;&#x52A8;&#x540C;&#x6B65;&#x5176;&#x4ED6;&#x8282;&#x70B9;&#x6743;&#x9650;</span></a></li></ol></li></ol></li></ol></li></ol>
         
         </div>
       </aside>
